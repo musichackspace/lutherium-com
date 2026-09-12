@@ -1,26 +1,862 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lutherium.com</title>
-  <style>
-    :root { color-scheme: light dark; }
-    body { margin: 0; font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-           display: grid; place-items: center; min-height: 100vh;
-           background: #0f1115; color: #e6e6e6; text-align: center; padding: 2rem; }
-    .card { max-width: 40rem; }
-    h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0 0 .5rem; }
-    p { opacity: .8; margin: .25rem 0; }
-    .hint { margin-top: 2rem; font-size: .9rem; opacity: .55; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lutherium — Espace de travail dédié à la musique et à la création · La Couture-Boussey</title>
+<meta name="description" content="Lutherium : un espace de co-working connecté au monde, dédié à la musique et aux métiers de la création, dans une ferme de luthiers du XVIIIᵉ siècle à La Couture-Boussey, à 80 km de Paris." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lutherium — La Ferme des Luthiers" />
+<meta property="og:description" content="Un espace de co-working dédié à la musique et à la création, au cœur du village des facteurs d'instruments." />
+<meta property="og:image" content="/images/maison-principale.jpg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8471' stroke-width='2' stroke-linecap='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>" />
+<style>
+  :root{
+    --ink:#2b2722; --ink-soft:#5c5348; --line:#e2dcd2;
+    --paper:#fbf9f5; --paper-2:#f3efe7; --sage:#6f7d66; --sage-d:#55614d;
+    --clay:#a8613f; --max:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    -webkit-font-smoothing:antialiased}
+  h1,h2,h3{line-height:1.18;margin:0 0 .5em;font-weight:600;letter-spacing:-.01em}
+  h1{font-size:clamp(2.3rem,6vw,4rem)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+  h3{font-size:1.18rem}
+  p{margin:0 0 1em}
+  a{color:var(--sage-d)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem)}
+  section{padding:clamp(3.5rem,8vw,6.5rem) 0;border-top:1px solid var(--line)}
+  .eyebrow{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:.9rem;display:block}
+  .lede{font-size:clamp(1.1rem,2vw,1.32rem);color:var(--ink-soft);max-width:42rem}
+  .sans{font-family:ui-sans-serif,system-ui,-apple-system,sans-serif}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,249,245,.88);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:1.5rem;height:62px}
+  .brand{font-weight:600;font-size:1.16rem;letter-spacing:.01em;text-decoration:none;color:var(--ink)}
+  .brand span{color:var(--sage);font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;
+    font-family:ui-sans-serif,system-ui,sans-serif;margin-left:.55rem}
+  nav{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
+  nav a{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.86rem;color:var(--ink-soft);
+    text-decoration:none}
+  nav a:hover{color:var(--sage-d)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:#fff}
+  .lang button{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.06em;padding:.32rem .68rem;border:0;background:transparent;color:var(--ink-soft);cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--sage);color:#fff}
+  @media(max-width:860px){nav .nlink{display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:clamp(520px,82vh,760px);display:grid;align-items:end;
+    border-top:0;padding:0;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(30,26,22,.30) 0%,rgba(30,26,22,.22) 42%,rgba(30,26,22,.80) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-bottom:clamp(2.6rem,6vw,4.5rem);color:#fff}
+  .hero h1{color:#fff;max-width:16ch}
+  .hero .lede{color:rgba(255,255,255,.92);max-width:40rem}
+  .tag{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;
+    font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+    padding:.36rem .85rem;border-radius:99px;margin-bottom:1.3rem;backdrop-filter:blur(4px)}
+
+  /* buttons */
+  .btn{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.93rem;
+    font-weight:600;padding:.82rem 1.6rem;border-radius:7px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-p{background:var(--sage);color:#fff}
+  .btn-p:hover{background:var(--sage-d)}
+  .btn-g{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.45)}
+  .btn-g:hover{background:rgba(255,255,255,.2)}
+  .btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+
+  /* layout helpers */
+  .grid{display:grid;gap:clamp(1.5rem,3vw,2.4rem)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(max-width:840px){.split{grid-template-columns:1fr}}
+  .figure img{width:100%;border-radius:10px;display:block;box-shadow:0 14px 40px -18px rgba(43,39,34,.45)}
+  .cap{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;color:var(--ink-soft);
+    margin-top:.6rem;font-style:normal}
+
+  /* stat + cards */
+  .stat{border-left:2px solid var(--sage);padding-left:1.05rem}
+  .stat b{display:block;font-size:clamp(1.7rem,3.2vw,2.2rem);line-height:1.1}
+  .stat span{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;color:var(--ink-soft)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:1.5rem 1.4rem}
+  .card h3{margin-bottom:.4rem}
+  .card p{font-size:.95rem;color:var(--ink-soft);margin:0}
+  .num{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.12em;color:var(--sage);display:block;margin-bottom:.7rem}
+
+  /* spaces */
+  .space{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .space img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .space .body{padding:1.25rem 1.3rem 1.4rem}
+  .space h3{margin-bottom:.3rem}
+  .space p{font-size:.93rem;color:var(--ink-soft);margin:0}
+  .chip{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.7rem;
+    font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.24rem .6rem;
+    border-radius:99px;margin-bottom:.7rem}
+  .c-now{background:#e8ede4;color:var(--sage-d)}
+  .c-next{background:#f5e7dd;color:var(--clay)}
+
+  /* pricing */
+  .tier{background:#fff;border:1px solid var(--line);border-radius:11px;padding:1.5rem 1.4rem;
+    display:flex;flex-direction:column}
+  .tier.feat{border-color:var(--sage);box-shadow:0 0 0 1px var(--sage)}
+  .price{font-size:1.85rem;font-weight:600;margin:.25rem 0 .1rem}
+  .price small{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;
+    font-weight:500;color:var(--ink-soft)}
+  .tier ul{list-style:none;margin:.9rem 0 0;padding:0;font-size:.92rem;color:var(--ink-soft)}
+  .tier li{padding-left:1.25rem;position:relative;margin-bottom:.42rem}
+  .tier li::before{content:"—";position:absolute;left:0;color:var(--sage)}
+  .hyp{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;color:var(--clay);
+    background:#f9f0e9;border:1px solid #eedcce;border-radius:7px;padding:.7rem .9rem;margin-top:1.6rem}
+
+  /* phases */
+  .phase{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;padding:1.5rem 0;
+    border-bottom:1px solid var(--line)}
+  .phase:last-child{border-bottom:0}
+  .pnum{font-family:ui-sans-serif,system-ui,sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.1em;color:#fff;background:var(--sage);width:2.7rem;height:2.7rem;
+    border-radius:50%;display:grid;place-items:center}
+  .phase h3{margin-bottom:.25rem}
+  .phase p{margin:0;color:var(--ink-soft);font-size:.96rem}
+  .when{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.78rem;color:var(--clay);
+    font-weight:600;letter-spacing:.05em;margin-top:.45rem;display:block}
+
+  /* dark band */
+  .dark{background:#2b2722;color:#f0ece5;border-top:0}
+  .dark h2,.dark h3{color:#fff}
+  .dark .lede,.dark p{color:rgba(240,236,229,.8)}
+  .dark .eyebrow{color:#a9b69f}
+  .dark .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+  .dark .card p{color:rgba(240,236,229,.78)}
+  .dark .stat{border-color:#a9b69f}
+  .dark .stat span{color:rgba(240,236,229,.7)}
+
+  /* form */
+  form{max-width:46rem}
+  fieldset{border:0;padding:0;margin:0 0 2rem}
+  legend{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.78rem;font-weight:700;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--sage);margin-bottom:.9rem;padding:0}
+  label{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.9rem;
+    font-weight:500;margin-bottom:.42rem}
+  input[type=text],input[type=email],select,textarea{width:100%;font:inherit;font-size:.97rem;
+    padding:.7rem .85rem;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--sage);outline-offset:-1px;border-color:var(--sage)}
+  .field{margin-bottom:1.15rem}
+  .opts{display:grid;gap:.5rem}
+  .opt{display:flex;align-items:flex-start;gap:.6rem;font-family:ui-sans-serif,system-ui,sans-serif;
+    font-size:.93rem;font-weight:400;background:#fff;border:1px solid var(--line);
+    border-radius:7px;padding:.62rem .8rem;cursor:pointer;margin:0}
+  .opt:hover{border-color:var(--sage)}
+  .opt input{margin:.2rem 0 0;accent-color:var(--sage);flex:none}
+  .note{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;color:var(--ink-soft)}
+  #formMsg{display:none;margin-top:1rem;padding:.9rem 1.1rem;border-radius:7px;
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:.92rem}
+  #formMsg.ok{display:block;background:#e8ede4;color:var(--sage-d);border:1px solid #cbd6c2}
+  #formMsg.err{display:block;background:#f9ece9;color:#9a3d28;border:1px solid #eed5cf}
+
+  footer{background:#211e1a;color:rgba(240,236,229,.62);padding:3rem 0 2.4rem;
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:.88rem}
+  footer a{color:rgba(240,236,229,.9)}
+  .fgrid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
+
+  [hidden]{display:none !important}
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Lutherium.com</h1>
-    <p>Your new website is live. 🎉</p>
-    <p>Open the chat in ClaudeNav and describe what you'd like it to look like.</p>
-    <p class="hint">Edit this file (index.html) or ask Claude — then hit Publish.</p>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Lutherium<span data-i18n="brandSub">La Ferme des Luthiers</span></a>
+    <nav>
+      <a class="nlink" href="#vision" data-i18n="navVision">Le projet</a>
+      <a class="nlink" href="#lieu" data-i18n="navPlace">Le lieu</a>
+      <a class="nlink" href="#offre" data-i18n="navOffer">L'offre</a>
+      <a class="nlink" href="#modele" data-i18n="navModel">Le modèle</a>
+      <a class="nlink" href="#etude" data-i18n="navSurvey">Participer</a>
+      <div class="lang">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
   </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/maison-principale.jpg" alt="La Ferme des Luthiers, La Couture-Boussey" />
+  <div class="wrap">
+    <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 80 km de Paris</span>
+    <h1 data-i18n="heroTitle">Là où l'on fabriquait des flûtes, on fabriquera des idées.</h1>
+    <p class="lede" data-i18n="heroLede">Lutherium est un projet d'espace de travail partagé, connecté au monde, dédié à la musique et aux métiers de la création. Nous étudions sa viabilité — et nous avons besoin de votre avis.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="#etude" data-i18n="heroCta1">Répondre à l'étude (4 min)</a>
+      <a class="btn btn-g" href="#vision" data-i18n="heroCta2">Découvrir le projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="visionEyebrow">Le projet</span>
+    <h2 data-i18n="visionTitle">Un village qui a équipé les orchestres du monde entier</h2>
+    <div class="split" style="margin-top:2.2rem">
+      <div>
+        <p data-i18n="visionP1">La Couture-Boussey fabrique des instruments à vent depuis le XVIIᵉ siècle. Hotteterre, Lot, Godfroy, Buffet : les dynasties de facteurs nées ici ont équipé les orchestres de Paris, Londres et New York. Le village possède toujours son musée des instruments à vent.</p>
+        <p data-i18n="visionP2">La Ferme des Luthiers est l'une de ces maisons. Elle appartient à la lignée des Lot, facteurs de flûtes traversières, depuis plus de 300 ans. Ses granges ont servi au travail des flûtes, puis à l'élevage, puis aux séminaires et aux mariages.</p>
+        <p data-i18n="visionP3"><strong>Lutherium propose de leur donner un quatrième usage :</strong> un lieu de travail et de création où des musiciens, des développeurs, des designers, des startups et des organisations culturelles viennent se concentrer, produire et se rencontrer — relié en permanence à une communauté internationale par la fibre, un studio et un programme en ligne.</p>
+      </div>
+      <div class="figure">
+        <img src="images/vue-aerienne-village.jpg" alt="Vue aérienne de La Couture-Boussey" />
+        <p class="cap" data-i18n="visionCap">La Couture-Boussey, Eure — le domaine en bordure du bourg historique.</p>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
+      <div class="stat"><b>300+</b><span data-i18n="stat1">ans dans la même famille de luthiers</span></div>
+      <div class="stat"><b>2 ha</b><span data-i18n="stat2">de terrain, deux accès distincts</span></div>
+      <div class="stat"><b>500 m²</b><span data-i18n="stat3">de salles de réception déjà opérationnelles</span></div>
+      <div class="stat"><b>80 km</b><span data-i18n="stat4">de Paris — env. 1 h 15 porte-à-porte</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / WHY -->
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="whyEyebrow">L'hypothèse</span>
+    <h2 data-i18n="whyTitle">Quatre tendances qui se croisent ici</h2>
+    <p class="lede" data-i18n="whyLede">Nous pensons qu'un lieu de ce type devient viable aujourd'hui, pour quatre raisons. L'étude ci-dessous sert à vérifier si nous avons raison.</p>
+    <div class="grid g4" style="margin-top:2.6rem">
+      <div class="card">
+        <span class="num">01</span>
+        <h3 data-i18n="why1t">Le travail a quitté le bureau</h3>
+        <p data-i18n="why1p">Les professionnels de la création travaillent à distance, mais mal : chez eux, sans studio, sans pairs, sans acoustique.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3 data-i18n="why2t">La concentration devient rare</h3>
+        <p data-i18n="why2p">Composer, écrire, coder, prototyper demandent des blocs de temps longs que la ville fragmente.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3 data-i18n="why3t">Les équipes cherchent des lieux qui ont du sens</h3>
+        <p data-i18n="why3p">Le séminaire d'entreprise banalisé s'essouffle. Un patrimoine vivant et une histoire réelle se racontent.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3 data-i18n="why4t">Une communauté existe déjà</h3>
+        <p data-i18n="why4p">Music Hackspace réunit des milliers de musiciens et technologues dans le monde. Lutherium leur donne une adresse physique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIEU -->
+<section id="lieu">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="placeEyebrow">Le lieu</span>
+    <h2 data-i18n="placeTitle">Six bâtiments, deux hectares, une montée en charge par étapes</h2>
+    <p class="lede" data-i18n="placeLede">Le domaine est déjà partiellement exploitable. Les salles de réception accueillent séminaires et événements depuis les années 2000 — c'est là que le pilote démarrerait, sans travaux lourds.</p>
+
+    <div class="grid g3" style="margin-top:2.6rem">
+      <article class="space">
+        <img src="images/salle-seminaire.jpg" alt="Salle de séminaire" />
+        <div class="body">
+          <span class="chip c-now" data-i18n="chipNow">Opérationnel</span>
+          <h3 data-i18n="sp1t">Les salles de réception — 500 m²</h3>
+          <p data-i18n="sp1p">Charpente apparente, lumière naturelle, configurations séminaire ou atelier. Le cœur du co-working et des offsites dès le jour un.</p>
+        </div>
+      </article>
+      <article class="space">
+        <img src="images/salle-reception.jpg" alt="Grande salle en configuration réception" />
+        <div class="body">
+          <span class="chip c-now" data-i18n="chipNow2">Opérationnel</span>
+          <h3 data-i18n="sp2t">La grande salle — événements</h3>
+          <p data-i18n="sp2p">Concerts, restitutions, conférences, mariages. Une source de revenus existante qui finance la montée en charge.</p>
+        </div>
+      </article>
+      <article class="space">
+        <img src="images/bergerie.jpg" alt="La Bergerie" />
+        <div class="body">
+          <span class="chip c-next" data-i18n="chipNext">Phase 2</span>
+          <h3 data-i18n="sp3t">La Bergerie</h3>
+          <p data-i18n="sp3p">Bâtiment rénové avec studio indépendant. Destiné aux résidences de création et à l'hébergement des membres de passage.</p>
+        </div>
+      </article>
+      <article class="space">
+        <img src="images/forge.jpg" alt="La Forge" />
+        <div class="body">
+          <span class="chip c-next" data-i18n="chipNext2">Phase 2</span>
+          <h3 data-i18n="sp4t">La Forge et le four à pain</h3>
+          <p data-i18n="sp4p">Ensemble de bâtiments avec appartement. Ateliers, lutherie, fabrication, prototypage — le retour du travail de la matière.</p>
+        </div>
+      </article>
+      <article class="space">
+        <img src="images/hangar.jpg" alt="Le hangar de 550 m²" />
+        <div class="body">
+          <span class="chip c-next" data-i18n="chipNext3">Phase 3</span>
+          <h3 data-i18n="sp5t">Le hangar — 550 m²</h3>
+          <p data-i18n="sp5p">Volume brut au sol. Le potentiel le plus important du site : studios acoustiques, salle de répétition, grand atelier.</p>
+        </div>
+      </article>
+      <article class="space">
+        <img src="images/grange-pierre.jpg" alt="Grange en pierre" />
+        <div class="body">
+          <span class="chip c-next" data-i18n="chipNext4">Phase 3</span>
+          <h3 data-i18n="sp6t">Granges et terrain</h3>
+          <p data-i18n="sp6p">Bâtiments de pierre et parcelles constructibles : hébergement long séjour, extension, jardins de travail en extérieur.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRE -->
+<section id="offre" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="offerEyebrow">L'offre envisagée</span>
+    <h2 data-i18n="offerTitle">Cinq formules à tester</h2>
+    <p class="lede" data-i18n="offerLede">Les tarifs ci-dessous sont des hypothèses de travail, pas une grille commerciale. Ils servent à mesurer votre consentement à payer.</p>
+
+    <div class="grid g3" style="margin-top:2.6rem">
+      <div class="tier">
+        <h3 data-i18n="t1t">Journée</h3>
+        <div class="price">25 €<small data-i18n="t1u"> / jour</small></div>
+        <ul>
+          <li data-i18n="t1a">Accès poste de travail 9h–19h</li>
+          <li data-i18n="t1b">Fibre, café, déjeuner en option</li>
+          <li data-i18n="t1c">Sans engagement</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <h3 data-i18n="t2t">Nomade</h3>
+        <div class="price">90 €<small data-i18n="t2u"> / mois</small></div>
+        <ul>
+          <li data-i18n="t2a">5 jours par mois</li>
+          <li data-i18n="t2b">Accès aux événements membres</li>
+          <li data-i18n="t2c">Pour les Parisiens en échappée</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3 data-i18n="t3t">Résident</h3>
+        <div class="price">190 €<small data-i18n="t3u"> / mois</small></div>
+        <ul>
+          <li data-i18n="t3a">Accès illimité, poste attitré</li>
+          <li data-i18n="t3b">Créneaux studio inclus</li>
+          <li data-i18n="t3c">Domiciliation possible</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3 data-i18n="t4t">Résidence de création</h3>
+        <div class="price">650 €<small data-i18n="t4u"> / semaine</small></div>
+        <ul>
+          <li data-i18n="t4a">Hébergement sur place inclus</li>
+          <li data-i18n="t4b">Studio et atelier en accès</li>
+          <li data-i18n="t4c">1 à 4 semaines</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3 data-i18n="t5t">Séminaire / offsite</h3>
+        <div class="price">1 800 €<small data-i18n="t5u"> / 2 jours</small></div>
+        <ul>
+          <li data-i18n="t5a">Jusqu'à 20 personnes, privatisé</li>
+          <li data-i18n="t5b">Restauration et nuitées en option</li>
+          <li data-i18n="t5c">Atelier musical en option</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3 data-i18n="t6t">Studio à l'heure</h3>
+        <div class="price">35 €<small data-i18n="t6u"> / heure</small></div>
+        <ul>
+          <li data-i18n="t6a">Enregistrement et captation</li>
+          <li data-i18n="t6b">Ouvert aux non-membres</li>
+          <li data-i18n="t6c">Phase 2</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hyp" data-i18n="offerNote">⚠︎ Hypothèses non contractuelles. Rien n'est construit, rien n'est ouvert, rien n'est en vente. Cette page sert exclusivement à évaluer la demande.</p>
+  </div>
+</section>
+
+<!-- MODELE -->
+<section id="modele">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="modelEyebrow">Le modèle</span>
+    <h2 data-i18n="modelTitle">Une montée en charge en quatre phases</h2>
+    <p class="lede" data-i18n="modelLede">Le principe : ne rien construire avant d'avoir prouvé la demande, et financer chaque phase par les revenus de la précédente.</p>
+
+    <div style="margin-top:2.4rem;max-width:54rem">
+      <div class="phase">
+        <div class="pnum">00</div>
+        <div>
+          <h3 data-i18n="ph0t">Validation</h3>
+          <p data-i18n="ph0p">Cette étude de marché. Mesurer la demande, les segments, le consentement à payer et la distance acceptable. Aucun investissement.</p>
+          <span class="when" data-i18n="ph0w">En cours</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pnum">01</div>
+        <div>
+          <h3 data-i18n="ph1t">Pilote</h3>
+          <p data-i18n="ph1p">Ouverture de journées de co-working dans les salles de réception existantes, une à deux fois par semaine, plus deux offsites tests. Investissement minimal : fibre, mobilier, assurance.</p>
+          <span class="when" data-i18n="ph1w">Si l'étude est concluante</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pnum">02</div>
+        <div>
+          <h3 data-i18n="ph2t">Résidences et studio</h3>
+          <p data-i18n="ph2p">Aménagement de la Bergerie et de la Forge : hébergement, studio d'enregistrement, ateliers. Lancement du programme de résidences et du lien en ligne avec la communauté internationale.</p>
+          <span class="when" data-i18n="ph2w">Après 12 mois de pilote rentable</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="pnum">03</div>
+        <div>
+          <h3 data-i18n="ph3t">Le hangar</h3>
+          <p data-i18n="ph3p">Reconversion des 550 m² : studios acoustiques, salle de répétition, grand atelier de fabrication. Phase capitalistique, financée par emprunt, subventions patrimoine et partenaires.</p>
+          <span class="when" data-i18n="ph3w">Horizon 3–5 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:clamp(3rem,6vw,4.5rem)">
+      <div>
+        <h3 style="font-size:1.35rem" data-i18n="revTitle">Les sources de revenus</h3>
+        <div class="grid" style="gap:.9rem;margin-top:1.2rem">
+          <div class="card"><h3 data-i18n="rev1t">Abonnements et journées</h3><p data-i18n="rev1p">Revenu récurrent, faible marge unitaire, essentiel pour la vie du lieu.</p></div>
+          <div class="card"><h3 data-i18n="rev2t">Séminaires et privatisations</h3><p data-i18n="rev2p">Forte marge, activité déjà éprouvée sur le site. Le moteur financier des premières années.</p></div>
+          <div class="card"><h3 data-i18n="rev3t">Résidences et hébergement</h3><p data-i18n="rev3p">Panier élevé, saisonnalité maîtrisable, fort attrait international.</p></div>
+          <div class="card"><h3 data-i18n="rev4t">Événements et programme en ligne</h3><p data-i18n="rev4p">Concerts, masterclasses, captations diffusées à la communauté mondiale.</p></div>
+          <div class="card"><h3 data-i18n="rev5t">Patrimoine et partenariats publics</h3><p data-i18n="rev5p">Le caractère patrimonial et musical du site ouvre des dispositifs régionaux et culturels.</p></div>
+        </div>
+      </div>
+      <div class="figure">
+        <img src="images/parc-exterieur.jpg" alt="Le parc du domaine" />
+        <p class="cap" data-i18n="revCap">Le parc — restauration, événements et travail en extérieur à la belle saison.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTEUR -->
+<section class="dark">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow" data-i18n="whoEyebrow">Le porteur du projet</span>
+      <h2 data-i18n="whoTitle">Jean-Baptiste Thiebaut</h2>
+      <p data-i18n="whoP1">Descendant de la famille Lot, propriétaire et gestionnaire de La Ferme des Luthiers. Il dirige Music Hackspace, organisation qui forme une communauté internationale de musiciens et de technologues, conseille Mindset Music Ventures et dirige Chordline Ventures.</p>
+      <p data-i18n="whoP2">Le projet réunit deux choses qu'il connaît bien : un patrimoine familial de trois siècles consacré à la fabrication d'instruments, et un réseau mondial de créateurs qui travaillent déjà ensemble à distance — sans lieu où se retrouver.</p>
+    </div>
+    <div class="figure">
+      <img src="images/grange-lierre.jpg" alt="Grange couverte de lierre" />
+    </div>
+  </div>
+</section>
+
+<!-- ETUDE -->
+<section id="etude">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="surveyEyebrow">Étude de marché</span>
+    <h2 data-i18n="surveyTitle">Dites-nous si ce lieu vous serait utile</h2>
+    <p class="lede" data-i18n="surveyLede">Quatre minutes. Vos réponses déterminent si le projet se fait, et sous quelle forme. Aucune obligation, aucune revente de données.</p>
+
+    <form id="survey" style="margin-top:2.6rem">
+      <fieldset>
+        <legend data-i18n="fsYou">Vous</legend>
+        <div class="field">
+          <label for="profil" data-i18n="qProfile">Qu'est-ce qui vous décrit le mieux ?</label>
+          <select id="profil" name="profil" required>
+            <option value="" data-i18n="optChoose">Choisir…</option>
+            <option data-i18n="p1">Musicien·ne / compositeur·rice</option>
+            <option data-i18n="p2">Producteur·rice / ingénieur·e du son</option>
+            <option data-i18n="p3">Développeur·se / technologue</option>
+            <option data-i18n="p4">Designer / artiste visuel·le</option>
+            <option data-i18n="p5">Fondateur·rice de startup</option>
+            <option data-i18n="p6">Organisation culturelle / label</option>
+            <option data-i18n="p7">Facteur·rice d'instruments / artisan·e</option>
+            <option data-i18n="p8">Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="lieu" data-i18n="qWhere">Où vivez-vous ou travaillez-vous principalement ?</label>
+          <select id="lieu" name="lieu" required>
+            <option value="" data-i18n="optChoose2">Choisir…</option>
+            <option data-i18n="w1">Paris / Île-de-France</option>
+            <option data-i18n="w2">Eure / Normandie</option>
+            <option data-i18n="w3">Ailleurs en France</option>
+            <option data-i18n="w4">Royaume-Uni</option>
+            <option data-i18n="w5">Ailleurs en Europe</option>
+            <option data-i18n="w6">Hors d'Europe</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="fsInterest">Votre intérêt</legend>
+        <div class="field">
+          <label for="interet" data-i18n="qInterest">Un tel lieu à La Couture-Boussey vous intéresserait-il ?</label>
+          <select id="interet" name="interet" required>
+            <option value="" data-i18n="optChoose3">Choisir…</option>
+            <option data-i18n="i1">Beaucoup — je viendrais régulièrement</option>
+            <option data-i18n="i2">Oui — pour des séjours ponctuels</option>
+            <option data-i18n="i3">Peut-être — cela dépend des conditions</option>
+            <option data-i18n="i4">Peu probable</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="usage" data-i18n="qUse">Quelle formule vous correspondrait le mieux ?</label>
+          <select id="usage" name="usage">
+            <option value="" data-i18n="optChoose4">Choisir…</option>
+            <option data-i18n="u1">Journées ponctuelles</option>
+            <option data-i18n="u2">Abonnement mensuel léger (quelques jours)</option>
+            <option data-i18n="u3">Abonnement permanent / poste attitré</option>
+            <option data-i18n="u4">Résidence de création d'une à quatre semaines</option>
+            <option data-i18n="u5">Séminaire ou offsite pour mon équipe</option>
+            <option data-i18n="u6">Location de studio à l'heure</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="qImportant">Qu'est-ce qui compte le plus pour vous ? (plusieurs choix possibles)</label>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="criteres" value="studio" /><span data-i18n="k1">Un studio d'enregistrement correct</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="hebergement" /><span data-i18n="k2">Pouvoir dormir sur place</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="calme" /><span data-i18n="k3">Le calme et la concentration</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="pairs" /><span data-i18n="k4">Rencontrer d'autres créateurs</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="atelier" /><span data-i18n="k5">Un atelier de fabrication / lutherie</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="transport" /><span data-i18n="k6">L'accès en train sans voiture</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="prix" /><span data-i18n="k7">Le prix avant tout</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="programme" /><span data-i18n="k8">Un programme d'événements et de masterclasses</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="prix" data-i18n="qPrice">Pour une journée de travail sur place, vous paieriez :</label>
+          <select id="prix" name="prix">
+            <option value="" data-i18n="optChoose5">Choisir…</option>
+            <option data-i18n="pr1">Moins de 15 €</option>
+            <option data-i18n="pr2">15 à 25 €</option>
+            <option data-i18n="pr3">25 à 40 €</option>
+            <option data-i18n="pr4">Plus de 40 €</option>
+            <option data-i18n="pr5">Je ne paierais que pour des séjours complets</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="frein" data-i18n="qBlocker">Quel serait le principal frein ?</label>
+          <select id="frein" name="frein">
+            <option value="" data-i18n="optChoose6">Choisir…</option>
+            <option data-i18n="b1">La distance / le trajet</option>
+            <option data-i18n="b2">Le prix</option>
+            <option data-i18n="b3">L'absence d'équipement technique suffisant</option>
+            <option data-i18n="b4">Je n'ai pas besoin de quitter mon lieu de travail actuel</option>
+            <option data-i18n="b5">Aucun frein particulier</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="fsContact">Rester informé</legend>
+        <div class="field">
+          <label for="email" data-i18n="qEmail">E-mail (facultatif — pour recevoir les résultats et l'invitation au pilote)</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.com" />
+        </div>
+        <div class="field">
+          <label for="mot" data-i18n="qFree">Un mot libre ? Ce que vous aimeriez y trouver, ce qui manque, vos doutes.</label>
+          <textarea id="mot" name="mot" rows="4"></textarea>
+        </div>
+        <button class="btn btn-p" type="submit" data-i18n="submit">Envoyer mes réponses</button>
+        <div id="formMsg" role="status"></div>
+        <p class="note" style="margin-top:1rem" data-i18n="privacy">Vos réponses ne servent qu'à cette étude. Elles ne sont ni revendues ni partagées.</p>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <div style="color:#fff;font-family:inherit;font-size:1.05rem;font-weight:600;margin-bottom:.3rem">Lutherium</div>
+      <div data-i18n="footAddr">La Ferme des Luthiers · La Couture-Boussey, Eure, Normandie</div>
+      <div style="margin-top:.4rem"><a href="mailto:jb@musichackspace.org">jb@musichackspace.org</a></div>
+    </div>
+    <div style="max-width:26rem">
+      <p style="margin:0" data-i18n="footNote">Projet à l'étude. Ce site présente une intention, pas une offre commerciale : aucun espace n'est actuellement ouvert à la location.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   Où partent les réponses de l'étude.
+   Laisser vide  -> le formulaire ouvre l'e-mail de l'utilisateur (aucun serveur requis).
+   Renseigner    -> les réponses sont envoyées en POST JSON à cette URL
+                    (ex. Formspree : https://formspree.io/f/xxxxxxx).
+------------------------------------------------------------------- */
+const FORM_ENDPOINT = "";
+const CONTACT_EMAIL = "jb@musichackspace.org";
+
+/* ---------------------------- i18n ---------------------------- */
+const EN = {
+  brandSub:"The Luthiers' Farm",
+  navVision:"The project", navPlace:"The place", navOffer:"Offer",
+  navModel:"Model", navSurvey:"Take part",
+
+  heroTag:"La Couture-Boussey · Normandy · 80 km from Paris",
+  heroTitle:"Where flutes were made, ideas will be.",
+  heroLede:"Lutherium is a proposed world-connected shared workspace for music and the creative professions. We are testing whether it can work — and we need your view.",
+  heroCta1:"Take the survey (4 min)", heroCta2:"See the project",
+
+  visionEyebrow:"The project",
+  visionTitle:"A village that equipped the world's orchestras",
+  visionP1:"La Couture-Boussey has been making wind instruments since the 17th century. Hotteterre, Lot, Godfroy, Buffet: the instrument-making dynasties born here supplied the orchestras of Paris, London and New York. The village still has its museum of wind instruments.",
+  visionP2:"La Ferme des Luthiers is one of those houses. It has belonged to the Lot line — makers of transverse flutes — for more than 300 years. Its barns served flute making, then livestock, then seminars and weddings.",
+  visionP3:"<strong>Lutherium proposes a fourth use:</strong> a place to work and create, where musicians, developers, designers, startups and cultural organisations come to focus, produce and meet — permanently linked to an international community through fibre, a studio and an online programme.",
+  visionCap:"La Couture-Boussey, Eure — the estate on the edge of the historic village.",
+  stat1:"years in the same family of instrument makers",
+  stat2:"hectares of land, two separate accesses",
+  stat3:"of reception halls already in working order",
+  stat4:"from Paris — about 1 h 15 door to door",
+
+  whyEyebrow:"The hypothesis",
+  whyTitle:"Four trends that meet here",
+  whyLede:"We believe a place like this becomes viable today, for four reasons. The survey below exists to check whether we are right.",
+  why1t:"Work has left the office",
+  why1p:"Creative professionals work remotely, but badly: at home, with no studio, no peers, no acoustics.",
+  why2t:"Focus has become scarce",
+  why2p:"Composing, writing, coding and prototyping need long blocks of time that cities break up.",
+  why3t:"Teams want places that mean something",
+  why3p:"The generic corporate offsite is running out of steam. Living heritage and a real story can be told.",
+  why4t:"The community already exists",
+  why4p:"Music Hackspace brings together thousands of musicians and technologists worldwide. Lutherium gives them a physical address.",
+
+  placeEyebrow:"The place",
+  placeTitle:"Six buildings, two hectares, a staged ramp-up",
+  placeLede:"Part of the estate can already be used. The reception halls have hosted seminars and events since the 2000s — that is where the pilot would start, with no heavy building work.",
+  chipNow:"In use", chipNow2:"In use",
+  chipNext:"Phase 2", chipNext2:"Phase 2", chipNext3:"Phase 3", chipNext4:"Phase 3",
+  sp1t:"The reception halls — 500 m²",
+  sp1p:"Exposed timber frame, natural light, seminar or workshop layouts. The heart of the co-working space and offsites from day one.",
+  sp2t:"The great hall — events",
+  sp2p:"Concerts, showcases, conferences, weddings. An existing revenue stream that funds the ramp-up.",
+  sp3t:"The Bergerie",
+  sp3p:"Renovated building with a self-contained studio. Intended for creative residencies and for members staying over.",
+  sp4t:"The Forge and bread oven",
+  sp4p:"A cluster of buildings with an apartment. Workshops, instrument making, fabrication, prototyping — hands back on material.",
+  sp5t:"The barn — 550 m²",
+  sp5p:"Raw ground-floor volume. The site's biggest potential: acoustic studios, rehearsal room, large workshop.",
+  sp6t:"Barns and land",
+  sp6p:"Stone buildings and buildable plots: long-stay accommodation, extension, outdoor working gardens.",
+
+  offerEyebrow:"The proposed offer",
+  offerTitle:"Five formats to test",
+  offerLede:"The prices below are working hypotheses, not a price list. They exist to measure what you would be willing to pay.",
+  t1t:"Day pass", t1u:" / day",
+  t1a:"Desk access, 9am–7pm", t1b:"Fibre, coffee, lunch optional", t1c:"No commitment",
+  t2t:"Nomad", t2u:" / month",
+  t2a:"5 days per month", t2b:"Access to member events", t2c:"For Parisians getting away",
+  t3t:"Resident", t3u:" / month",
+  t3a:"Unlimited access, dedicated desk", t3b:"Studio slots included", t3c:"Business address available",
+  t4t:"Creative residency", t4u:" / week",
+  t4a:"Accommodation on site included", t4b:"Studio and workshop access", t4c:"1 to 4 weeks",
+  t5t:"Seminar / offsite", t5u:" / 2 days",
+  t5a:"Up to 20 people, exclusive use", t5b:"Catering and overnight stays optional", t5c:"Music workshop optional",
+  t6t:"Studio by the hour", t6u:" / hour",
+  t6a:"Recording and filming", t6b:"Open to non-members", t6c:"Phase 2",
+  offerNote:"⚠︎ Working hypotheses, not binding. Nothing is built, nothing is open, nothing is for sale. This page exists solely to assess demand.",
+
+  modelEyebrow:"The model",
+  modelTitle:"A ramp-up in four phases",
+  modelLede:"The principle: build nothing before demand is proven, and fund each phase from the revenue of the one before.",
+  ph0t:"Validation",
+  ph0p:"This market study. Measuring demand, segments, willingness to pay and acceptable travel distance. No investment.",
+  ph0w:"Under way",
+  ph1t:"Pilot",
+  ph1p:"Opening co-working days in the existing reception halls, once or twice a week, plus two trial offsites. Minimal investment: fibre, furniture, insurance.",
+  ph1w:"If the study is conclusive",
+  ph2t:"Residencies and studio",
+  ph2p:"Fitting out the Bergerie and the Forge: accommodation, recording studio, workshops. Launch of the residency programme and the online link to the international community.",
+  ph2w:"After 12 profitable months of pilot",
+  ph3t:"The barn",
+  ph3p:"Converting the 550 m²: acoustic studios, rehearsal room, large fabrication workshop. A capital-intensive phase, funded by borrowing, heritage grants and partners.",
+  ph3w:"3–5 year horizon",
+
+  revTitle:"Revenue streams",
+  rev1t:"Memberships and day passes",
+  rev1p:"Recurring revenue, thin unit margin, essential to the life of the place.",
+  rev2t:"Seminars and exclusive hire",
+  rev2p:"High margin, already proven on site. The financial engine of the early years.",
+  rev3t:"Residencies and accommodation",
+  rev3p:"High basket value, manageable seasonality, strong international appeal.",
+  rev4t:"Events and online programme",
+  rev4p:"Concerts, masterclasses and recordings streamed to the global community.",
+  rev5t:"Heritage and public partnerships",
+  rev5p:"The site's heritage and musical character opens regional and cultural funding routes.",
+  revCap:"The grounds — catering, events and outdoor working in the warmer months.",
+
+  whoEyebrow:"Behind the project",
+  whoTitle:"Jean-Baptiste Thiebaut",
+  whoP1:"A descendant of the Lot family, owner and manager of La Ferme des Luthiers. He is CEO of Music Hackspace, which convenes an international community of musicians and technologists, an advisor to Mindset Music Ventures, and CEO of Chordline Ventures.",
+  whoP2:"The project brings together two things he knows well: a three-century family heritage of instrument making, and a worldwide network of creators already working together remotely — with nowhere to gather.",
+
+  surveyEyebrow:"Market study",
+  surveyTitle:"Tell us whether this place would be useful to you",
+  surveyLede:"Four minutes. Your answers decide whether the project happens, and in what form. No obligation, no data resold.",
+  fsYou:"About you",
+  qProfile:"What best describes you?",
+  optChoose:"Choose…", optChoose2:"Choose…", optChoose3:"Choose…",
+  optChoose4:"Choose…", optChoose5:"Choose…", optChoose6:"Choose…",
+  p1:"Musician / composer", p2:"Producer / sound engineer", p3:"Developer / technologist",
+  p4:"Designer / visual artist", p5:"Startup founder", p6:"Cultural organisation / label",
+  p7:"Instrument maker / craftsperson", p8:"Other",
+  qWhere:"Where do you mainly live or work?",
+  w1:"Paris / Île-de-France", w2:"Eure / Normandy", w3:"Elsewhere in France",
+  w4:"United Kingdom", w5:"Elsewhere in Europe", w6:"Outside Europe",
+  fsInterest:"Your interest",
+  qInterest:"Would a place like this in La Couture-Boussey interest you?",
+  i1:"Very much — I would come regularly",
+  i2:"Yes — for occasional stays",
+  i3:"Maybe — it depends on the terms",
+  i4:"Unlikely",
+  qUse:"Which format would suit you best?",
+  u1:"Occasional day passes", u2:"Light monthly membership (a few days)",
+  u3:"Full membership / dedicated desk", u4:"One to four week creative residency",
+  u5:"A seminar or offsite for my team", u6:"Studio hire by the hour",
+  qImportant:"What matters most to you? (choose any)",
+  k1:"A proper recording studio", k2:"Being able to sleep on site",
+  k3:"Quiet and focus", k4:"Meeting other creators",
+  k5:"A fabrication / instrument-making workshop", k6:"Getting there by train, without a car",
+  k7:"Price above all", k8:"A programme of events and masterclasses",
+  qPrice:"For a day of work on site, you would pay:",
+  pr1:"Less than €15", pr2:"€15 to €25", pr3:"€25 to €40", pr4:"More than €40",
+  pr5:"I would only pay for full stays",
+  qBlocker:"What would be the main obstacle?",
+  b1:"The distance / the journey", b2:"The price",
+  b3:"Not enough technical equipment",
+  b4:"I have no need to leave my current workplace",
+  b5:"No particular obstacle",
+  fsContact:"Stay informed",
+  qEmail:"Email (optional — to receive the results and an invitation to the pilot)",
+  qFree:"Anything to add? What you would want to find there, what is missing, your doubts.",
+  submit:"Send my answers",
+  privacy:"Your answers are used for this study only. They are neither resold nor shared.",
+  footAddr:"La Ferme des Luthiers · La Couture-Boussey, Eure, Normandy",
+  footNote:"A project under study. This site sets out an intention, not a commercial offer: no space is currently available to rent.",
+
+  metaTitle:"Lutherium — A workspace for music and creation · La Couture-Boussey",
+  sendingOk:"Thank you — your answers have been recorded. They genuinely shape what happens next.",
+  sendingMail:"Your email app is opening with your answers ready to send. Press send to submit them.",
+  sendingErr:"Sending failed. You can email your answers directly to ",
+  placeholderEmail:"you@example.com"
+};
+
+/* French = source of truth in the HTML; snapshot it on load. */
+const FR = {};
+const NODES = document.querySelectorAll("[data-i18n]");
+NODES.forEach(n => FR[n.dataset.i18n] = n.innerHTML);
+const FR_EXTRA = {
+  metaTitle: document.title,
+  sendingOk:"Merci — vos réponses sont enregistrées. Elles pèsent réellement sur la suite.",
+  sendingMail:"Votre messagerie s'ouvre avec vos réponses prêtes à partir. Appuyez sur envoyer pour les transmettre.",
+  sendingErr:"L'envoi a échoué. Vous pouvez écrire directement à ",
+  placeholderEmail:"vous@exemple.com"
+};
+let STR = FR_EXTRA;
+
+function setLang(lang){
+  const dict = lang === "en" ? EN : FR;
+  NODES.forEach(n => { const v = dict[n.dataset.i18n]; if (v !== undefined) n.innerHTML = v; });
+  STR = lang === "en" ? EN : FR_EXTRA;
+  document.documentElement.lang = lang;
+  document.title = STR.metaTitle;
+  const em = document.getElementById("email");
+  if (em) em.placeholder = STR.placeholderEmail;
+  document.querySelectorAll(".lang button").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  try { localStorage.setItem("lutherium-lang", lang); } catch (e) {}
+}
+
+document.querySelectorAll(".lang button").forEach(b =>
+  b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+/* Initial language: ?lang= > saved choice > browser > French */
+(function initLang(){
+  const q = new URLSearchParams(location.search).get("lang");
+  let saved = null;
+  try { saved = localStorage.getItem("lutherium-lang"); } catch (e) {}
+  const nav = (navigator.language || "fr").toLowerCase().startsWith("fr") ? "fr" : "en";
+  setLang(q === "en" || q === "fr" ? q : (saved || nav));
+})();
+
+/* ------------------------- form handling ------------------------- */
+const form = document.getElementById("survey");
+const msg = document.getElementById("formMsg");
+
+function collect(){
+  const fd = new FormData(form);
+  const data = {};
+  for (const [k, v] of fd.entries()){
+    if (k === "criteres") (data.criteres ||= []).push(v);
+    else data[k] = v;
+  }
+  data.langue = document.documentElement.lang;
+  data.date = new Date().toISOString();
+  return data;
+}
+
+function asText(data){
+  return Object.entries(data)
+    .map(([k, v]) => k + ": " + (Array.isArray(v) ? v.join(", ") : v))
+    .join("\n");
+}
+
+function show(kind, text){
+  msg.className = kind;
+  msg.textContent = text;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = collect();
+
+  if (!FORM_ENDPOINT){
+    const subject = encodeURIComponent("Lutherium — réponse à l'étude de marché");
+    const body = encodeURIComponent(asText(data));
+    location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
+    show("ok", STR.sendingMail);
+    return;
+  }
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    form.reset();
+    show("ok", STR.sendingOk);
+  } catch (err) {
+    show("err", STR.sendingErr + CONTACT_EMAIL);
+  }
+});
+</script>
 </body>
 </html>
