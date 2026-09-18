@@ -176,8 +176,52 @@
   footer a{color:rgba(240,236,229,.9)}
   .fgrid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
 
+  /* bandeau de consentement */
+  #consent{position:fixed;left:0;right:0;bottom:0;z-index:100;
+    background:var(--paper);border-top:1px solid var(--line);
+    box-shadow:0 -6px 24px rgba(43,39,34,.09);
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:.88rem}
+  #consent .wrap{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;
+    align-items:center;justify-content:space-between;padding-top:1.1rem;padding-bottom:1.1rem}
+  #consent p{margin:0;max-width:44rem;color:var(--ink-soft);line-height:1.5}
+  #consent .cbtns{display:flex;gap:.6rem;flex-shrink:0}
+  #consent button{font:inherit;font-weight:600;cursor:pointer;
+    padding:.6rem 1.1rem;border-radius:999px;border:1px solid var(--line);
+    background:transparent;color:var(--ink-soft)}
+  #consent button:hover{border-color:var(--sage);color:var(--sage-d)}
+  #consent button.acc{background:var(--sage-d);border-color:var(--sage-d);color:#fff}
+  #consent button.acc:hover{background:var(--sage);color:#fff}
+  @media (max-width:640px){ #consent .cbtns{width:100%} #consent button{flex:1} }
+
   [hidden]{display:none !important}
 </style>
+
+<!-- Google Analytics 4 (G-DH3B853NGK).
+     Consent Mode v2 : rien n’est stocké ni mesuré tant que le visiteur n’a pas accepté. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DH3B853NGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  /* Par défaut, tout est refusé. */
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    wait_for_update: 500
+  });
+
+  /* Choix déjà exprimé lors d’une visite précédente. */
+  try {
+    if (localStorage.getItem("lutherium-consent") === "granted") {
+      gtag("consent", "update", { analytics_storage: "granted" });
+    }
+  } catch (e) {}
+
+  gtag("js", new Date());
+  gtag("config", "G-DH3B853NGK");
+</script>
 </head>
 <body>
 
@@ -776,6 +820,16 @@
   </div>
 </footer>
 
+<div id="consent" hidden>
+  <div class="wrap">
+    <p data-i18n="consentText">Nous utilisons Google Analytics pour mesurer l’audience de ce site et savoir si cette étude touche les bonnes personnes. Aucune mesure n’est effectuée sans votre accord.</p>
+    <div class="cbtns">
+      <button type="button" id="consentNo" data-i18n="consentNo">Refuser</button>
+      <button type="button" id="consentYes" class="acc" data-i18n="consentYes">Accepter</button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ------------------------------------------------------------------
    Où partent les réponses de l'étude.
@@ -1017,6 +1071,9 @@ const EN = {
   footNote:"A project under study. This site sets out an intention, not a commercial offer: nothing is open, no service is being sold and no premises are available to rent.",
   footHeritage:"La Ferme des Luthiers is private property. The estate is neither listed nor registered as a historic monument.",
 
+  consentText:"We use Google Analytics to measure this site’s audience and see whether this study is reaching the right people. Nothing is measured without your agreement.",
+  consentNo:"Decline", consentYes:"Accept",
+
   metaTitle:"Lutherium — A campus for music, creation and instrument making · La Couture-Boussey",
   sendingOk:"Thank you — your answers have been recorded. They genuinely shape what happens next.",
   sendingMail:"Your email app is opening with your answers ready to send. Press send to submit them.",
@@ -1062,6 +1119,48 @@ document.querySelectorAll(".lang button").forEach(b =>
   setLang(q === "en" || q === "fr" ? q : (saved || nav));
 })();
 
+/* ---------------------- consentement analytics ---------------------- */
+/* Le bandeau ne s’affiche que si le visiteur n’a pas encore choisi. */
+(function initConsent(){
+  const bar = document.getElementById("consent");
+  if (!bar) return;
+
+  let choice = null;
+  try { choice = localStorage.getItem("lutherium-consent"); } catch (e) {}
+  if (choice !== "granted" && choice !== "denied") bar.hidden = false;
+
+  function decide(value){
+    try { localStorage.setItem("lutherium-consent", value); } catch (e) {}
+    if (typeof gtag === "function"){
+      gtag("consent", "update", {
+        analytics_storage: value === "granted" ? "granted" : "denied"
+      });
+    }
+    bar.hidden = true;
+  }
+
+  document.getElementById("consentYes").addEventListener("click", () => decide("granted"));
+  document.getElementById("consentNo").addEventListener("click", () => decide("denied"));
+})();
+
+/* Evenements d’etude. Sans consentement, gtag les ignore silencieusement. */
+function track(name, params){
+  if (typeof gtag === "function") gtag("event", name, params || {});
+}
+
+/* Les quatre CTA de la section contact sont l’action la plus engageante
+   de la page : on veut savoir laquelle des quatre motive les visiteurs. */
+document.querySelectorAll('#contact a[href^="mailto:"]').forEach(a => {
+  a.addEventListener("click", () => {
+    const card = a.closest(".card");
+    const h = card && card.querySelector("h3");
+    track("contact_click", {
+      cta: a.dataset.i18n || "unknown",
+      label: h ? h.textContent.trim() : ""
+    });
+  });
+});
+
 /* ------------------------- form handling ------------------------- */
 /* Champs à cases à cocher : plusieurs valeurs pour une même clé. */
 const MULTI = new Set(["criteres", "soutien"]);
@@ -1091,6 +1190,14 @@ function show(kind, text){
   msg.textContent = text;
 }
 
+/* survey_start : a la premiere interaction avec un champ, une seule fois. */
+let started = false;
+form.addEventListener("input", () => {
+  if (started) return;
+  started = true;
+  track("survey_start");
+}, { once: false });
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = collect();
@@ -1099,6 +1206,7 @@ form.addEventListener("submit", async (e) => {
     const subject = encodeURIComponent("Lutherium — réponse à l'étude de marché");
     const body = encodeURIComponent(asText(data));
     location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
+    track("survey_submit", { method: "mailto" });
     show("ok", STR.sendingMail);
     return;
   }
@@ -1111,6 +1219,7 @@ form.addEventListener("submit", async (e) => {
     });
     if (!res.ok) throw new Error("HTTP " + res.status);
     form.reset();
+    track("survey_submit", { method: "endpoint" });
     show("ok", STR.sendingOk);
   } catch (err) {
     show("err", STR.sendingErr + CONTACT_EMAIL);
