@@ -1,7 +1,12 @@
 # Lutherium.com
 
-Market-research site for **Lutherium** — a proposed world-connected co-working space for
-music and the creative professions, at La Ferme des Luthiers, La Couture-Boussey (Eure).
+Market-research site for **Lutherium** — a proposed world-connected campus for work and
+creation, dedicated to music, the creative professions and *facture instrumentale*
+(instrument making), at La Ferme des Luthiers, La Couture-Boussey (Eure).
+
+It has two jobs: measure demand (the survey), and be the public face the people who decide
+whether this happens will read — team offsite buyers, prospective residents, patrons, and
+the public bodies instructing funding applications.
 
 Built with ClaudeNav. Edit `index.html` (or ask Claude), then Publish to update the live site.
 
@@ -41,8 +46,29 @@ const CONTACT_EMAIL = "jb@musichackspace.org";
 - **Set to a URL** — answers are POSTed as JSON. Any form backend that accepts JSON works;
   [Formspree](https://formspree.io) (`https://formspree.io/f/xxxxxxx`) is the quickest.
 
-Switching to a real endpoint before promoting the site is strongly recommended — the
-mailto fallback will undercount responses.
+**Switching to a real endpoint before promoting the site is strongly recommended — the
+mailto fallback will undercount responses. The questionnaire is now longer (team size,
+offsite budget, forms of support), so a lost response costs more than it used to.
+
+Direct enquiries bypass the survey entirely: the four cards in `#contact` are `mailto:`
+links with pre-filled subjects and body templates, one per audience (offsite, residency,
+support/patronage, institutions and press).
+
+## Section order
+
+`#vision` · `#lieu` (incl. access: train, car, last mile) · `#patrimoine` · `#offre` ·
+`#modele` · `#engagements` (social-enterprise commitments) · founder · `#contact` · `#etude`.
+
+## Two things the copy is deliberately doing
+
+1. **Services, not space.** Every format in `#offre` is described as a hosted service —
+   welcome, facilitation, programme, technical support, catering, accommodation — never as
+   letting premises. Zoned tax regimes and the district's business-property aid exclude
+   *activité civile*, i.e. property letting; the public site is a written record of how the
+   activity is described. Keep it that way when editing prices or features.
+2. **`facture instrumentale`, not `lutherie`.** That is the term used in the tax code, in
+   the EPV and Maître d'Art labels and in the CIMA craft-trades tax credit. "La Ferme des
+   Luthiers" stays as the historic name of the place.
 
 ## Photo credits
 

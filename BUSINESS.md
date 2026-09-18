@@ -99,7 +99,7 @@ soutenable le revenu 1, structurellement peu rentable en zone rurale.
 | Risque | Gravité | Réponse prévue |
 |---|---|---|
 | Bassin de population local trop faible pour remplir en semaine | Élevée | Ne pas dépendre de l'abonnement ; viser l'offsite et la résidence |
-| La distance depuis Paris décourage (1 h 15 porte-à-porte) | Élevée | Vendre le séjour, pas la journée ; tester explicitement dans l'étude |
+| La distance depuis Paris décourage (1 h porte-à-porte) | Élevée | Vendre le séjour, pas la journée ; tester explicitement dans l'étude |
 | Accès en train et dernier kilomètre difficiles | Moyenne | Navette gare, covoiturage, forfaits week-end |
 | Saisonnalité — bâtiments anciens et hivers normands | Moyenne | Chauffer d'abord un noyau restreint ; programmer l'hiver en intérieur |
 | Coût de rénovation du hangar sous-estimé | Élevée (phase 3) | Repousser en phase 3 ; conditionner à un financement externe |

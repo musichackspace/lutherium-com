@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lutherium — Espace de travail dédié à la musique et à la création · La Couture-Boussey</title>
-<meta name="description" content="Lutherium : un espace de co-working connecté au monde, dédié à la musique et aux métiers de la création, dans une ferme de luthiers du XVIIIᵉ siècle à La Couture-Boussey, à 80 km de Paris." />
+<title>Lutherium — Campus pour la musique, la création et la facture instrumentale · La Couture-Boussey</title>
+<meta name="description" content="Lutherium : campus de travail et de création dédié à la musique, aux métiers de la création et à la facture instrumentale. Séminaires et offsites, résidences de création, journées accompagnées — dans une ferme de facteurs de flûtes du XVIIIᵉ siècle à La Couture-Boussey, Eure, à 80 km de Paris." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Lutherium — La Ferme des Luthiers" />
-<meta property="og:description" content="Un espace de co-working dédié à la musique et à la création, au cœur du village des facteurs d'instruments." />
+<meta property="og:description" content="Séminaires, résidences de création et journées de travail accompagnées, au cœur du village de la facture instrumentale." />
 <meta property="og:image" content="/images/maison-principale.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8471' stroke-width='2' stroke-linecap='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>" />
 <style>
@@ -93,6 +93,9 @@
   .stat span{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;color:var(--ink-soft)}
   .card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:1.5rem 1.4rem}
   .card h3{margin-bottom:.4rem}
+  .card.act{display:flex;flex-direction:column}
+  .card.act .cta{margin-top:auto;padding-top:1.1rem;margin-bottom:0}
+  .card.act .btn{font-size:.88rem;padding:.7rem 1.15rem}
   .card p{font-size:.95rem;color:var(--ink-soft);margin:0}
   .num{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;font-weight:700;
     letter-spacing:.12em;color:var(--sage);display:block;margin-bottom:.7rem}
@@ -184,8 +187,10 @@
     <nav>
       <a class="nlink" href="#vision" data-i18n="navVision">Le projet</a>
       <a class="nlink" href="#lieu" data-i18n="navPlace">Le lieu</a>
+      <a class="nlink" href="#patrimoine" data-i18n="navHeritage">Le patrimoine</a>
       <a class="nlink" href="#offre" data-i18n="navOffer">L'offre</a>
       <a class="nlink" href="#modele" data-i18n="navModel">Le modèle</a>
+      <a class="nlink" href="#contact" data-i18n="navContact">Nous écrire</a>
       <a class="nlink" href="#etude" data-i18n="navSurvey">Participer</a>
       <div class="lang">
         <button type="button" data-lang="fr" aria-pressed="true">FR</button>
@@ -203,9 +208,10 @@
   <div class="wrap">
     <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 80 km de Paris</span>
     <h1 data-i18n="heroTitle">Là où l'on fabriquait des flûtes, on fabriquera des idées.</h1>
-    <p class="lede" data-i18n="heroLede">Lutherium est un projet d'espace de travail partagé, connecté au monde, dédié à la musique et aux métiers de la création. Nous étudions sa viabilité — et nous avons besoin de votre avis.</p>
+    <p class="lede" data-i18n="heroLede">Lutherium est un projet de campus de travail et de création, connecté au monde, dédié à la musique, aux métiers de la création et à la facture instrumentale : séminaires d'équipe, résidences de création, journées de travail accompagnées. Nous étudions sa viabilité — et nous avons besoin de votre avis.</p>
     <div class="btns">
       <a class="btn btn-p" href="#etude" data-i18n="heroCta1">Répondre à l'étude (4 min)</a>
+      <a class="btn btn-g" href="#contact" data-i18n="heroCta3">Organiser un séminaire ou une résidence</a>
       <a class="btn btn-g" href="#vision" data-i18n="heroCta2">Découvrir le projet</a>
     </div>
   </div>
@@ -218,7 +224,7 @@
     <h2 data-i18n="visionTitle">Un village qui a équipé les orchestres du monde entier</h2>
     <div class="split" style="margin-top:2.2rem">
       <div>
-        <p data-i18n="visionP1">La Couture-Boussey fabrique des instruments à vent depuis le XVIIᵉ siècle. Hotteterre, Lot, Godfroy, Buffet : les dynasties de facteurs nées ici ont équipé les orchestres de Paris, Londres et New York. Le village possède toujours son musée des instruments à vent.</p>
+        <p data-i18n="visionP1">La Couture-Boussey fabrique des instruments à vent depuis le XVIIᵉ siècle. Hotteterre, Lot, Godfroy, Buffet : les dynasties de facteurs nées ici ont équipé les orchestres de Paris, Londres et New York. Le village possède toujours son musée des instruments à vent. Le métier porte un nom : la <strong>facture instrumentale</strong>.</p>
         <p data-i18n="visionP2">La Ferme des Luthiers est l'une de ces maisons. Elle appartient à la lignée des Lot, facteurs de flûtes traversières, depuis plus de 300 ans. Ses granges ont servi au travail des flûtes, puis à l'élevage, puis aux séminaires et aux mariages.</p>
         <p data-i18n="visionP3"><strong>Lutherium propose de leur donner un quatrième usage :</strong> un lieu de travail et de création où des musiciens, des développeurs, des designers, des startups et des organisations culturelles viennent se concentrer, produire et se rencontrer — relié en permanence à une communauté internationale par la fibre, un studio et un programme en ligne.</p>
       </div>
@@ -229,10 +235,10 @@
     </div>
 
     <div class="grid g4" style="margin-top:clamp(2.5rem,5vw,3.5rem)">
-      <div class="stat"><b>300+</b><span data-i18n="stat1">ans dans la même famille de luthiers</span></div>
+      <div class="stat"><b>300+</b><span data-i18n="stat1">ans dans la même famille de facteurs de flûtes</span></div>
       <div class="stat"><b>2 ha</b><span data-i18n="stat2">de terrain, deux accès distincts</span></div>
       <div class="stat"><b>500 m²</b><span data-i18n="stat3">de salles de réception déjà opérationnelles</span></div>
-      <div class="stat"><b>80 km</b><span data-i18n="stat4">de Paris — env. 1 h 15 porte-à-porte</span></div>
+      <div class="stat"><b>80 km</b><span data-i18n="stat4">de Paris — env. 1 h porte-à-porte</span></div>
     </div>
   </div>
 </section>
@@ -262,7 +268,7 @@
       <div class="card">
         <span class="num">04</span>
         <h3 data-i18n="why4t">Une communauté existe déjà</h3>
-        <p data-i18n="why4p">Music Hackspace réunit des milliers de musiciens et technologues dans le monde. Lutherium leur donne une adresse physique.</p>
+        <p data-i18n="why4p">Music Hackspace réunit depuis plus de dix ans une communauté internationale de musiciens, développeurs et chercheurs en son — cours en ligne, ateliers, rencontres — répartie sur plusieurs continents et sans lieu physique où se retrouver. Lutherium lui donne une adresse.</p>
       </div>
     </div>
   </div>
@@ -325,6 +331,52 @@
         </div>
       </article>
     </div>
+
+    <!-- Accès : le frein le plus cité, traité explicitement -->
+    <div class="grid g3" style="margin-top:2.6rem">
+      <div class="card">
+        <h3 data-i18n="acc1t">En train</h3>
+        <p data-i18n="acc1p">Paris Saint-Lazare → Évreux-Normandie, environ 1 h, liaisons fréquentes. Puis 20 minutes de route jusqu'au domaine : navette groupée les jours d'ouverture et pour les séminaires, covoiturage entre membres le reste du temps.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="acc2t">En voiture</h3>
+        <p data-i18n="acc2p">80 km de Paris par l'A13 puis la N13, environ 1 h porte-à-porte hors heures de pointe. Stationnement sur place, deux accès distincts au domaine, livraisons et matériel volumineux possibles.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="acc3t">Le dernier kilomètre</h3>
+        <p data-i18n="acc3p">C'est le point faible assumé du site, et l'une des questions de l'étude. Navette gare, forfaits séjour et arrivées groupées sont les réponses envisagées — le but étant de vendre un séjour plutôt qu'un aller-retour quotidien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATRIMOINE -->
+<section id="patrimoine" class="dark">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="herEyebrow">Le patrimoine</span>
+    <h2 data-i18n="herTitle">Un ensemble bâti à restaurer, et à ouvrir</h2>
+    <p class="lede" data-i18n="herLede">Le domaine n'est pas classé ni inscrit au titre des monuments historiques. C'est un patrimoine rural privé, ordinaire par son statut et singulier par son histoire : des bâtiments agricoles et artisanaux liés depuis trois siècles à la fabrication des instruments à vent, visibles depuis la voie publique, en bordure du bourg. Leur restauration est la condition de tout le reste.</p>
+
+    <div class="split" style="margin-top:2.8rem">
+      <div class="grid" style="gap:1.2rem">
+        <div class="card">
+          <h3 data-i18n="her1t">L'enveloppe d'abord</h3>
+          <p data-i18n="her1p">Murs, façades et toitures avant tout aménagement intérieur. Charpentes et couvertures des granges, maçonneries de pierre et de brique, menuiseries : c'est le programme de restauration qui conditionne l'usage, et non l'inverse. Aucun travail ne sera engagé avant labellisation et avis de l'architecte des Bâtiments de France.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="her2t">Ouvert au public</h3>
+          <p data-i18n="her2p">Un patrimoine restauré doit pouvoir se visiter. Le projet prévoit des journées portes ouvertes, la participation aux Journées européennes du patrimoine, des concerts et restitutions publiques dans la grande salle, et un lien avec le musée des instruments à vent du village.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="her3t">La facture instrumentale, comme métier vivant</h3>
+          <p data-i18n="her3p">L'ambition n'est pas commémorative. La Forge et les ateliers ont vocation à accueillir des facteurs d'instruments en activité, des résidences d'artisans et de la transmission de savoir-faire — le métier pratiqué, pas seulement raconté.</p>
+        </div>
+      </div>
+      <div class="figure">
+        <img src="images/grange-pierre.jpg" alt="Grange de pierre du domaine" />
+        <p class="cap" data-i18n="herCap">Les bâtiments de pierre — l'enveloppe à restaurer avant tout usage nouveau.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -332,70 +384,70 @@
 <section id="offre" style="background:var(--paper-2)">
   <div class="wrap">
     <span class="eyebrow" data-i18n="offerEyebrow">L'offre envisagée</span>
-    <h2 data-i18n="offerTitle">Cinq formules à tester</h2>
-    <p class="lede" data-i18n="offerLede">Les tarifs ci-dessous sont des hypothèses de travail, pas une grille commerciale. Ils servent à mesurer votre consentement à payer.</p>
+    <h2 data-i18n="offerTitle">Six formats de séjour et de travail accompagné</h2>
+    <p class="lede" data-i18n="offerLede">Lutherium ne loue pas des mètres carrés. Chaque format est une prestation de services — accueil, animation, programme, accompagnement technique, restauration et hébergement organisés. Les montants ci-dessous sont des hypothèses de travail, pas une grille commerciale : ils servent à mesurer votre consentement à payer.</p>
 
     <div class="grid g3" style="margin-top:2.6rem">
-      <div class="tier">
-        <h3 data-i18n="t1t">Journée</h3>
-        <div class="price">25 €<small data-i18n="t1u"> / jour</small></div>
+      <div class="tier feat">
+        <h3 data-i18n="t1t">Séminaire / offsite d'équipe</h3>
+        <div class="price">1 800 €<small data-i18n="t1u"> / 2 jours</small></div>
         <ul>
-          <li data-i18n="t1a">Accès poste de travail 9h–19h</li>
-          <li data-i18n="t1b">Fibre, café, déjeuner en option</li>
-          <li data-i18n="t1c">Sans engagement</li>
+          <li data-i18n="t1a">Jusqu'à 20 personnes, domaine réservé</li>
+          <li data-i18n="t1b">Programme conçu et animé avec vous</li>
+          <li data-i18n="t1c">Atelier musical encadré, restauration et nuitées organisées</li>
         </ul>
       </div>
       <div class="tier feat">
-        <h3 data-i18n="t2t">Nomade</h3>
-        <div class="price">90 €<small data-i18n="t2u"> / mois</small></div>
+        <h3 data-i18n="t2t">Résidence de création</h3>
+        <div class="price">650 €<small data-i18n="t2u"> / semaine</small></div>
         <ul>
-          <li data-i18n="t2a">5 jours par mois</li>
-          <li data-i18n="t2b">Accès aux événements membres</li>
-          <li data-i18n="t2c">Pour les Parisiens en échappée</li>
+          <li data-i18n="t2a">Séjour accompagné, 1 à 4 semaines</li>
+          <li data-i18n="t2b">Studio, atelier et assistance technique</li>
+          <li data-i18n="t2c">Hébergement et restauration sur place, restitution publique</li>
         </ul>
       </div>
       <div class="tier">
-        <h3 data-i18n="t3t">Résident</h3>
-        <div class="price">190 €<small data-i18n="t3u"> / mois</small></div>
+        <h3 data-i18n="t3t">Journée</h3>
+        <div class="price">25 €<small data-i18n="t3u"> / jour</small></div>
         <ul>
-          <li data-i18n="t3a">Accès illimité, poste attitré</li>
-          <li data-i18n="t3b">Créneaux studio inclus</li>
-          <li data-i18n="t3c">Domiciliation possible</li>
+          <li data-i18n="t3a">Journée de travail accompagnée, 9h–19h</li>
+          <li data-i18n="t3b">Fibre, café, déjeuner en option</li>
+          <li data-i18n="t3c">Sans engagement</li>
         </ul>
       </div>
       <div class="tier">
-        <h3 data-i18n="t4t">Résidence de création</h3>
-        <div class="price">650 €<small data-i18n="t4u"> / semaine</small></div>
+        <h3 data-i18n="t4t">Nomade</h3>
+        <div class="price">90 €<small data-i18n="t4u"> / mois</small></div>
         <ul>
-          <li data-i18n="t4a">Hébergement sur place inclus</li>
-          <li data-i18n="t4b">Studio et atelier en accès</li>
-          <li data-i18n="t4c">1 à 4 semaines</li>
+          <li data-i18n="t4a">5 journées par mois</li>
+          <li data-i18n="t4b">Programme d'événements et de rencontres</li>
+          <li data-i18n="t4c">Pour les Franciliens en échappée</li>
         </ul>
       </div>
       <div class="tier">
-        <h3 data-i18n="t5t">Séminaire / offsite</h3>
-        <div class="price">1 800 €<small data-i18n="t5u"> / 2 jours</small></div>
+        <h3 data-i18n="t5t">Membre à l'année</h3>
+        <div class="price">190 €<small data-i18n="t5u"> / mois</small></div>
         <ul>
-          <li data-i18n="t5a">Jusqu'à 20 personnes, privatisé</li>
-          <li data-i18n="t5b">Restauration et nuitées en option</li>
-          <li data-i18n="t5c">Atelier musical en option</li>
+          <li data-i18n="t5a">Accès à toutes les journées d'ouverture</li>
+          <li data-i18n="t5b">Créneaux studio et atelier inclus</li>
+          <li data-i18n="t5c">Accompagnement, mise en réseau, masterclasses</li>
         </ul>
       </div>
       <div class="tier">
         <h3 data-i18n="t6t">Studio à l'heure</h3>
         <div class="price">35 €<small data-i18n="t6u"> / heure</small></div>
         <ul>
-          <li data-i18n="t6a">Enregistrement et captation</li>
-          <li data-i18n="t6b">Ouvert aux non-membres</li>
+          <li data-i18n="t6a">Enregistrement et captation assistés</li>
+          <li data-i18n="t6b">Ingénieur du son en option, ouvert aux non-membres</li>
           <li data-i18n="t6c">Phase 2</li>
         </ul>
       </div>
     </div>
-    <p class="hyp" data-i18n="offerNote">⚠︎ Hypothèses non contractuelles. Rien n'est construit, rien n'est ouvert, rien n'est en vente. Cette page sert exclusivement à évaluer la demande.</p>
+
+    <p class="hyp" data-i18n="offerNote">⚠︎ Hypothèses non contractuelles. Rien n'est construit, rien n'est ouvert, rien n'est en vente, et aucun local n'est proposé à la location. Cette page sert exclusivement à évaluer la demande.</p>
   </div>
 </section>
 
-<!-- MODELE -->
 <section id="modele">
   <div class="wrap">
     <span class="eyebrow" data-i18n="modelEyebrow">Le modèle</span>
@@ -456,17 +508,82 @@
   </div>
 </section>
 
+<!-- ENGAGEMENTS -->
+<section id="engagements" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="engEyebrow">Nos engagements</span>
+    <h2 data-i18n="engTitle">Une exploitation d'utilité sociale, pas une opération immobilière</h2>
+    <p class="lede" data-i18n="engLede">La société qui exploitera le lieu est destinée à être constituée sous statut d'économie sociale et solidaire. Ce n'est pas une étiquette : cela engage la gouvernance, l'affectation du résultat et la finalité du projet, et cela se décide à la rédaction des statuts — donc maintenant.</p>
+
+    <div class="grid g4" style="margin-top:2.6rem">
+      <div class="card">
+        <span class="num">01</span>
+        <h3 data-i18n="eng1t">Transmission des savoir-faire</h3>
+        <p data-i18n="eng1p">Formation, ateliers et compagnonnage autour de la facture instrumentale et des métiers du son. Accueillir des artisans en activité et organiser la transmission à des apprenants est la raison d'être du lieu, pas un supplément.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3 data-i18n="eng2t">Ancrage territorial et emploi</h3>
+        <p data-i18n="eng2p">Emplois non délocalisables en milieu rural, recours aux entreprises et artisans du bassin d'Évreux pour la restauration, tarifs adaptés pour les habitants de la commune et de l'agglomération.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3 data-i18n="eng3t">Ouverture au public</h3>
+        <p data-i18n="eng3p">Le patrimoine restauré est accessible : portes ouvertes, Journées européennes du patrimoine, concerts et restitutions de résidence gratuits ou à prix libre, partenariat avec le musée des instruments à vent.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3 data-i18n="eng4t">Résultat réinvesti</h3>
+        <p data-i18n="eng4p">Gouvernance associant salariés et parties prenantes, écarts de rémunération encadrés, majorité du résultat affectée aux réserves et à la restauration des bâtiments plutôt qu'à la distribution. Le projet n'est pas construit pour être revendu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PORTEUR -->
 <section class="dark">
   <div class="wrap split">
     <div>
       <span class="eyebrow" data-i18n="whoEyebrow">Le porteur du projet</span>
       <h2 data-i18n="whoTitle">Jean-Baptiste Thiebaut</h2>
-      <p data-i18n="whoP1">Descendant de la famille Lot, propriétaire et gestionnaire de La Ferme des Luthiers. Il dirige Music Hackspace, organisation qui forme une communauté internationale de musiciens et de technologues, conseille Mindset Music Ventures et dirige Chordline Ventures.</p>
+      <p data-i18n="whoP1">Descendant de la famille Lot, propriétaire et gestionnaire de La Ferme des Luthiers, dont il assure la conservation et l'exploitation. Il dirige Music Hackspace, organisation qui forme et réunit une communauté internationale de musiciens et de technologues.</p>
       <p data-i18n="whoP2">Le projet réunit deux choses qu'il connaît bien : un patrimoine familial de trois siècles consacré à la fabrication d'instruments, et un réseau mondial de créateurs qui travaillent déjà ensemble à distance — sans lieu où se retrouver.</p>
+      <p data-i18n="whoP3" class="note" style="color:rgba(240,236,229,.62)">Il conseille par ailleurs Mindset Music Ventures et dirige Chordline Ventures, structures d'investissement sans lien capitalistique avec Lutherium ni avec le domaine.</p>
     </div>
     <div class="figure">
       <img src="images/grange-lierre.jpg" alt="Grange couverte de lierre" />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="ctEyebrow">Nous écrire</span>
+    <h2 data-i18n="ctTitle">Quatre raisons de prendre contact</h2>
+    <p class="lede" data-i18n="ctLede">Le questionnaire plus bas sert à mesurer la demande. Si votre demande est précise, écrivez-nous directement : nous répondons à chacune.</p>
+
+    <div class="grid g4" style="margin-top:2.6rem">
+      <div class="card act">
+        <h3 data-i18n="ct1t">Organiser un séminaire ou un offsite</h3>
+        <p data-i18n="ct1p">Vous cherchez un lieu pour deux jours d'équipe, hors de Paris, avec une histoire à raconter. Dites-nous vos dates, votre effectif et votre budget par personne : nous vous dirons ce qui est possible dès le pilote.</p>
+        <p class="cta"><a class="btn btn-p" href="mailto:jb@musichackspace.org?subject=Lutherium%20%E2%80%94%20projet%20de%20s%C3%A9minaire%20ou%20d%27offsite&amp;body=Effectif%20%3A%0ADates%20envisag%C3%A9es%20%3A%0ABudget%20par%20personne%20%3A%0ACe%20que%20vous%20cherchez%20%3A%0A" data-i18n="ct1b">Décrire votre projet d'offsite</a></p>
+      </div>
+      <div class="card act">
+        <h3 data-i18n="ct2t">Candidater à une résidence</h3>
+        <p data-i18n="ct2p">Artistes, compositeurs, facteurs d'instruments, chercheurs en son : le programme de résidences ouvrira en phase 2. Nous constituons dès maintenant la première promotion pressentie et cherchons à comprendre vos besoins d'atelier et de studio.</p>
+        <p class="cta"><a class="btn btn-p" href="mailto:jb@musichackspace.org?subject=Lutherium%20%E2%80%94%20int%C3%A9r%C3%AAt%20pour%20une%20r%C3%A9sidence&amp;body=Votre%20pratique%20%3A%0ADur%C3%A9e%20souhait%C3%A9e%20%3A%0ABesoins%20techniques%20(studio%2C%20atelier%2C%20h%C3%A9bergement)%20%3A%0A" data-i18n="ct2b">Se signaler pour une résidence</a></p>
+      </div>
+      <div class="card act">
+        <h3 data-i18n="ct3t">Soutenir la restauration</h3>
+        <p data-i18n="ct3p">Mécénat, dons, financement participatif, prêts ou titres participatifs : la restauration de l'enveloppe des bâtiments se financera en partie par des soutiens privés, sans ouverture du capital. Les particuliers comme les entreprises peuvent y contribuer.</p>
+        <p class="cta"><a class="btn btn-p" href="mailto:jb@musichackspace.org?subject=Lutherium%20%E2%80%94%20soutien%20et%20m%C3%A9c%C3%A9nat&amp;body=Nature%20du%20soutien%20envisag%C3%A9%20%3A%0AVous%20%C3%AAtes%20%3A%20particulier%20%2F%20entreprise%20%2F%20fondation%0A" data-i18n="ct3b">Parler d'un soutien</a></p>
+      </div>
+      <div class="card act">
+        <h3 data-i18n="ct4t">Collectivités, institutions, presse</h3>
+        <p data-i18n="ct4p">Commune, agglomération, Région, services du patrimoine, partenaires culturels et journalistes : le dossier de présentation, les plans et les éléments financiers sont disponibles sur demande.</p>
+        <p class="cta"><a class="btn btn-p" href="mailto:jb@musichackspace.org?subject=Lutherium%20%E2%80%94%20demande%20institutionnelle%20ou%20presse&amp;body=Organisme%20%3A%0AObjet%20de%20la%20demande%20%3A%0A" data-i18n="ct4b">Demander le dossier</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -492,6 +609,8 @@
             <option data-i18n="p5">Fondateur·rice de startup</option>
             <option data-i18n="p6">Organisation culturelle / label</option>
             <option data-i18n="p7">Facteur·rice d'instruments / artisan·e</option>
+            <option data-i18n="p9">Dirigeant·e, RH ou office manager (je réserve pour une équipe)</option>
+            <option data-i18n="p10">Collectivité, institution ou financeur</option>
             <option data-i18n="p8">Autre</option>
           </select>
         </div>
@@ -544,6 +663,7 @@
             <label class="opt"><input type="checkbox" name="criteres" value="transport" /><span data-i18n="k6">L'accès en train sans voiture</span></label>
             <label class="opt"><input type="checkbox" name="criteres" value="prix" /><span data-i18n="k7">Le prix avant tout</span></label>
             <label class="opt"><input type="checkbox" name="criteres" value="programme" /><span data-i18n="k8">Un programme d'événements et de masterclasses</span></label>
+            <label class="opt"><input type="checkbox" name="criteres" value="patrimoine" /><span data-i18n="k9">Le cadre patrimonial et l'histoire du lieu</span></label>
           </div>
         </div>
         <div class="field">
@@ -567,6 +687,58 @@
             <option data-i18n="b4">Je n'ai pas besoin de quitter mon lieu de travail actuel</option>
             <option data-i18n="b5">Aucun frein particulier</option>
           </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="fsTeam">Si vous réservez pour une équipe</legend>
+        <p class="note" style="margin:-.3rem 0 1rem" data-i18n="teamNote">Le séminaire d'équipe est le format qui décide de la viabilité du lieu. Même une réponse approximative nous est utile.</p>
+        <div class="field">
+          <label for="equipe" data-i18n="qTeamSize">Combien de personnes réuniriez-vous ?</label>
+          <select id="equipe" name="equipe">
+            <option value="" data-i18n="optChoose7">Choisir…</option>
+            <option data-i18n="ts0">Sans objet — je viendrais seul·e</option>
+            <option data-i18n="ts1">Moins de 10</option>
+            <option data-i18n="ts2">10 à 20</option>
+            <option data-i18n="ts3">20 à 40</option>
+            <option data-i18n="ts4">Plus de 40</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget" data-i18n="qTeamBudget">Budget réaliste, par personne et par jour, hébergement et restauration compris :</label>
+          <select id="budget" name="budget">
+            <option value="" data-i18n="optChoose8">Choisir…</option>
+            <option data-i18n="tb1">Moins de 80 €</option>
+            <option data-i18n="tb2">80 à 150 €</option>
+            <option data-i18n="tb3">150 à 250 €</option>
+            <option data-i18n="tb4">Plus de 250 €</option>
+            <option data-i18n="tb5">Je ne sais pas</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="frequence" data-i18n="qTeamFreq">À quelle fréquence votre équipe part-elle en séminaire ?</label>
+          <select id="frequence" name="frequence">
+            <option value="" data-i18n="optChoose9">Choisir…</option>
+            <option data-i18n="tf1">Jamais</option>
+            <option data-i18n="tf2">Une fois par an</option>
+            <option data-i18n="tf3">Deux à trois fois par an</option>
+            <option data-i18n="tf4">Plus souvent</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="fsSupport">Soutenir le projet</legend>
+        <div class="field">
+          <label data-i18n="qSupport">Au-delà de la fréquentation, seriez-vous ouvert·e à l'une de ces formes de soutien ? (plusieurs choix possibles)</label>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="soutien" value="don" /><span data-i18n="s1">Un don ou une contribution à la restauration du bâti</span></label>
+            <label class="opt"><input type="checkbox" name="soutien" value="participatif" /><span data-i18n="s2">Une campagne de financement participatif</span></label>
+            <label class="opt"><input type="checkbox" name="soutien" value="pret" /><span data-i18n="s3">Un prêt ou des titres participatifs rémunérés</span></label>
+            <label class="opt"><input type="checkbox" name="soutien" value="mecenat" /><span data-i18n="s4">Un mécénat d'entreprise ou un partenariat</span></label>
+            <label class="opt"><input type="checkbox" name="soutien" value="competences" /><span data-i18n="s5">Du temps ou des compétences (technique, musique, artisanat)</span></label>
+            <label class="opt"><input type="checkbox" name="soutien" value="aucun" /><span data-i18n="s6">Aucune — je veux surtout pouvoir y travailler</span></label>
+          </div>
         </div>
       </fieldset>
 
@@ -598,7 +770,8 @@
       <div style="margin-top:.4rem"><a href="mailto:jb@musichackspace.org">jb@musichackspace.org</a></div>
     </div>
     <div style="max-width:26rem">
-      <p style="margin:0" data-i18n="footNote">Projet à l'étude. Ce site présente une intention, pas une offre commerciale : aucun espace n'est actuellement ouvert à la location.</p>
+      <p style="margin:0" data-i18n="footNote">Projet à l'étude. Ce site présente une intention, pas une offre commerciale : aucun espace n'est ouvert, aucune prestation n'est vendue, et aucun local n'est proposé à la location.</p>
+      <p style="margin:.6rem 0 0" data-i18n="footHeritage">La Ferme des Luthiers est une propriété privée. Le domaine n'est ni classé ni inscrit au titre des monuments historiques.</p>
     </div>
   </div>
 </footer>
@@ -606,6 +779,13 @@
 <script>
 /* ------------------------------------------------------------------
    Où partent les réponses de l'étude.
+
+   ⚠️ À FAIRE AVANT TOUTE PROMOTION DU SITE : renseigner FORM_ENDPOINT.
+   Tant qu'il est vide, l'envoi passe par la messagerie du visiteur — ce qui
+   coûte un clic de plus et fait perdre une part importante des réponses.
+   Le questionnaire est désormais plus long (équipe, budget, soutien) : la
+   perte serait d'autant plus coûteuse.
+
    Laisser vide  -> le formulaire ouvre l'e-mail de l'utilisateur (aucun serveur requis).
    Renseigner    -> les réponses sont envoyées en POST JSON à cette URL
                     (ex. Formspree : https://formspree.io/f/xxxxxxx).
@@ -618,22 +798,24 @@ const EN = {
   brandSub:"The Luthiers' Farm",
   navVision:"The project", navPlace:"The place", navOffer:"Offer",
   navModel:"Model", navSurvey:"Take part",
+  navHeritage:"Heritage", navContact:"Contact us",
 
   heroTag:"La Couture-Boussey · Normandy · 80 km from Paris",
   heroTitle:"Where flutes were made, ideas will be.",
-  heroLede:"Lutherium is a proposed world-connected shared workspace for music and the creative professions. We are testing whether it can work — and we need your view.",
+  heroLede:"Lutherium is a proposed world-connected campus for work and creation, dedicated to music, the creative professions and instrument making: team offsites, creative residencies, hosted working days. We are testing whether it can work — and we need your view.",
   heroCta1:"Take the survey (4 min)", heroCta2:"See the project",
+  heroCta3:"Plan an offsite or a residency",
 
   visionEyebrow:"The project",
   visionTitle:"A village that equipped the world's orchestras",
-  visionP1:"La Couture-Boussey has been making wind instruments since the 17th century. Hotteterre, Lot, Godfroy, Buffet: the instrument-making dynasties born here supplied the orchestras of Paris, London and New York. The village still has its museum of wind instruments.",
+  visionP1:"La Couture-Boussey has been making wind instruments since the 17th century. Hotteterre, Lot, Godfroy, Buffet: the instrument-making dynasties born here supplied the orchestras of Paris, London and New York. The village still has its museum of wind instruments. The trade has a name: <strong>facture instrumentale</strong>, instrument making.",
   visionP2:"La Ferme des Luthiers is one of those houses. It has belonged to the Lot line — makers of transverse flutes — for more than 300 years. Its barns served flute making, then livestock, then seminars and weddings.",
   visionP3:"<strong>Lutherium proposes a fourth use:</strong> a place to work and create, where musicians, developers, designers, startups and cultural organisations come to focus, produce and meet — permanently linked to an international community through fibre, a studio and an online programme.",
   visionCap:"La Couture-Boussey, Eure — the estate on the edge of the historic village.",
-  stat1:"years in the same family of instrument makers",
+  stat1:"years in the same family of flute makers",
   stat2:"hectares of land, two separate accesses",
   stat3:"of reception halls already in working order",
-  stat4:"from Paris — about 1 h 15 door to door",
+  stat4:"from Paris — about 1 h door to door",
 
   whyEyebrow:"The hypothesis",
   whyTitle:"Four trends that meet here",
@@ -645,7 +827,7 @@ const EN = {
   why3t:"Teams want places that mean something",
   why3p:"The generic corporate offsite is running out of steam. Living heritage and a real story can be told.",
   why4t:"The community already exists",
-  why4p:"Music Hackspace brings together thousands of musicians and technologists worldwide. Lutherium gives them a physical address.",
+  why4p:"For over a decade Music Hackspace has convened an international community of musicians, developers and sound researchers — online courses, workshops, meetups — spread across several continents with no physical place to gather. Lutherium gives it an address.",
 
   placeEyebrow:"The place",
   placeTitle:"Six buildings, two hectares, a staged ramp-up",
@@ -665,22 +847,73 @@ const EN = {
   sp6t:"Barns and land",
   sp6p:"Stone buildings and buildable plots: long-stay accommodation, extension, outdoor working gardens.",
 
+  acc1t:"By train",
+  acc1p:"Paris Saint-Lazare to Évreux-Normandie, about an hour, with frequent services. Then 20 minutes by road to the estate: a shared shuttle on opening days and for seminars, car-sharing between members the rest of the time.",
+  acc2t:"By car",
+  acc2p:"80 km from Paris via the A13 then the N13, about 1 h door to door outside peak hours. Parking on site, two separate entrances to the estate, deliveries and bulky equipment possible.",
+  acc3t:"The last mile",
+  acc3p:"This is the site's acknowledged weak point, and one of the survey's questions. A station shuttle, stay packages and grouped arrivals are the answers under consideration — the aim being to sell a stay rather than a daily round trip.",
+
+  herEyebrow:"Heritage",
+  herTitle:"A group of buildings to restore, and to open",
+  herLede:"The estate is neither listed nor registered as a historic monument. It is private rural heritage — ordinary in status, singular in history: farm and workshop buildings tied for three centuries to the making of wind instruments, visible from the public road, on the edge of the village. Restoring them is the precondition for everything else.",
+  her1t:"The envelope first",
+  her1p:"Walls, façades and roofs before any interior fit-out. Barn frames and roof coverings, stone and brick masonry, joinery: the restoration programme determines the use, not the other way round. No work will begin before the heritage label is granted and the Architecte des Bâtiments de France has given an opinion.",
+  her2t:"Open to the public",
+  her2p:"Restored heritage should be visitable. The project plans open days, participation in the European Heritage Days, concerts and public showings in the great hall, and a link with the village museum of wind instruments.",
+  her3t:"Instrument making as a living trade",
+  her3p:"The ambition is not commemorative. The Forge and the workshops are meant to host working instrument makers, craft residencies and the transmission of skills — the trade practised, not merely recounted.",
+  herCap:"The stone buildings — the envelope to restore before any new use.",
+
+  engEyebrow:"Our commitments",
+  engTitle:"A social-purpose operation, not a property play",
+  engLede:"The company that will run the place is intended to be incorporated under France's social and solidarity economy statute. That is not a label: it binds governance, the allocation of profit and the purpose of the project, and it is decided when the articles are drafted — so, now.",
+  eng1t:"Passing on the skills",
+  eng1p:"Training, workshops and apprenticeship around instrument making and the sound professions. Hosting working craftspeople and organising transmission to learners is the reason the place exists, not an add-on.",
+  eng2t:"Local roots and jobs",
+  eng2p:"Jobs that cannot be offshored, in a rural area; restoration work contracted to firms and craftspeople of the Évreux area; adapted rates for residents of the village and the wider district.",
+  eng3t:"Open to the public",
+  eng3p:"Restored heritage stays accessible: open days, European Heritage Days, free or pay-what-you-can concerts and residency showings, a partnership with the museum of wind instruments.",
+  eng4t:"Profit reinvested",
+  eng4p:"Governance involving employees and stakeholders, capped pay differentials, and the majority of any profit allocated to reserves and to restoring the buildings rather than distributed. The project is not built to be sold on.",
+
+  ctEyebrow:"Contact us",
+  ctTitle:"Four reasons to get in touch",
+  ctLede:"The questionnaire below measures demand. If your request is specific, write to us directly: we answer every one.",
+  ct1t:"Plan a seminar or offsite",
+  ct1p:"You are looking for somewhere to take a team for two days, out of Paris, with a story to tell. Tell us your dates, your headcount and your budget per person and we will tell you what is possible from the pilot onwards.",
+  ct1b:"Describe your offsite",
+  ct2t:"Apply for a residency",
+  ct2p:"Artists, composers, instrument makers, sound researchers: the residency programme opens in phase 2. We are already assembling a prospective first cohort and want to understand your workshop and studio needs.",
+  ct2b:"Register your interest",
+  ct3t:"Support the restoration",
+  ct3p:"Patronage, donations, crowdfunding, loans or participating securities: restoring the building envelope will be funded partly by private support, without opening the share capital. Individuals and companies alike can contribute.",
+  ct3b:"Discuss support",
+  ct4t:"Public bodies, institutions, press",
+  ct4p:"Municipality, district, Region, heritage services, cultural partners and journalists: the presentation dossier, the plans and the financial material are available on request.",
+  ct4b:"Request the dossier",
+
   offerEyebrow:"The proposed offer",
-  offerTitle:"Five formats to test",
-  offerLede:"The prices below are working hypotheses, not a price list. They exist to measure what you would be willing to pay.",
-  t1t:"Day pass", t1u:" / day",
-  t1a:"Desk access, 9am–7pm", t1b:"Fibre, coffee, lunch optional", t1c:"No commitment",
-  t2t:"Nomad", t2u:" / month",
-  t2a:"5 days per month", t2b:"Access to member events", t2c:"For Parisians getting away",
-  t3t:"Resident", t3u:" / month",
-  t3a:"Unlimited access, dedicated desk", t3b:"Studio slots included", t3c:"Business address available",
-  t4t:"Creative residency", t4u:" / week",
-  t4a:"Accommodation on site included", t4b:"Studio and workshop access", t4c:"1 to 4 weeks",
-  t5t:"Seminar / offsite", t5u:" / 2 days",
-  t5a:"Up to 20 people, exclusive use", t5b:"Catering and overnight stays optional", t5c:"Music workshop optional",
+  offerTitle:"Six formats of hosted stay and hosted work",
+  offerLede:"Lutherium does not let square metres. Every format is a service — hosting, facilitation, programme, technical support, catering and accommodation arranged for you. The figures below are working hypotheses, not a price list: they exist to measure what you would be willing to pay.",
+  t1t:"Team seminar / offsite", t1u:" / 2 days",
+  t1a:"Up to 20 people, estate reserved for you",
+  t1b:"Programme designed and facilitated with you",
+  t1c:"Guided music workshop, catering and overnight stays arranged",
+  t2t:"Creative residency", t2u:" / week",
+  t2a:"Hosted stay, 1 to 4 weeks",
+  t2b:"Studio, workshop and technical support",
+  t2c:"Accommodation and catering on site, public showing",
+  t3t:"Day", t3u:" / day",
+  t3a:"Hosted working day, 9am–7pm", t3b:"Fibre, coffee, lunch optional", t3c:"No commitment",
+  t4t:"Nomad", t4u:" / month",
+  t4a:"5 days per month", t4b:"Programme of events and meetups", t4c:"For Parisians getting away",
+  t5t:"Annual member", t5u:" / month",
+  t5a:"Access to every opening day", t5b:"Studio and workshop slots included",
+  t5c:"Support, introductions, masterclasses",
   t6t:"Studio by the hour", t6u:" / hour",
-  t6a:"Recording and filming", t6b:"Open to non-members", t6c:"Phase 2",
-  offerNote:"⚠︎ Working hypotheses, not binding. Nothing is built, nothing is open, nothing is for sale. This page exists solely to assess demand.",
+  t6a:"Assisted recording and filming", t6b:"Sound engineer optional, open to non-members", t6c:"Phase 2",
+  offerNote:"⚠︎ Working hypotheses, not binding. Nothing is built, nothing is open, nothing is for sale, and no premises are offered to let. This page exists solely to assess demand.",
 
   modelEyebrow:"The model",
   modelTitle:"A ramp-up in four phases",
@@ -713,8 +946,9 @@ const EN = {
 
   whoEyebrow:"Behind the project",
   whoTitle:"Jean-Baptiste Thiebaut",
-  whoP1:"A descendant of the Lot family, owner and manager of La Ferme des Luthiers. He is CEO of Music Hackspace, which convenes an international community of musicians and technologists, an advisor to Mindset Music Ventures, and CEO of Chordline Ventures.",
+  whoP1:"A descendant of the Lot family, owner and manager of La Ferme des Luthiers, responsible for its conservation and operation. He is CEO of Music Hackspace, which trains and convenes an international community of musicians and technologists.",
   whoP2:"The project brings together two things he knows well: a three-century family heritage of instrument making, and a worldwide network of creators already working together remotely — with nowhere to gather.",
+  whoP3:"He also advises Mindset Music Ventures and is CEO of Chordline Ventures, investment structures with no shareholding link to Lutherium or to the estate.",
 
   surveyEyebrow:"Market study",
   surveyTitle:"Tell us whether this place would be useful to you",
@@ -726,6 +960,8 @@ const EN = {
   p1:"Musician / composer", p2:"Producer / sound engineer", p3:"Developer / technologist",
   p4:"Designer / visual artist", p5:"Startup founder", p6:"Cultural organisation / label",
   p7:"Instrument maker / craftsperson", p8:"Other",
+  p9:"Founder, HR or office manager (I book for a team)",
+  p10:"Public body, institution or funder",
   qWhere:"Where do you mainly live or work?",
   w1:"Paris / Île-de-France", w2:"Eure / Normandy", w3:"Elsewhere in France",
   w4:"United Kingdom", w5:"Elsewhere in Europe", w6:"Outside Europe",
@@ -744,6 +980,7 @@ const EN = {
   k3:"Quiet and focus", k4:"Meeting other creators",
   k5:"A fabrication / instrument-making workshop", k6:"Getting there by train, without a car",
   k7:"Price above all", k8:"A programme of events and masterclasses",
+  k9:"The heritage setting and the history of the place",
   qPrice:"For a day of work on site, you would pay:",
   pr1:"Less than €15", pr2:"€15 to €25", pr3:"€25 to €40", pr4:"More than €40",
   pr5:"I would only pay for full stays",
@@ -752,15 +989,35 @@ const EN = {
   b3:"Not enough technical equipment",
   b4:"I have no need to leave my current workplace",
   b5:"No particular obstacle",
+  fsTeam:"If you book for a team",
+  teamNote:"The team seminar is the format that decides whether this place is viable. Even a rough answer helps us.",
+  optChoose7:"Choose…", optChoose8:"Choose…", optChoose9:"Choose…",
+  qTeamSize:"How many people would you bring together?",
+  ts0:"Not applicable — I would come alone", ts1:"Fewer than 10", ts2:"10 to 20",
+  ts3:"20 to 40", ts4:"More than 40",
+  qTeamBudget:"A realistic budget, per person per day, accommodation and catering included:",
+  tb1:"Less than €80", tb2:"€80 to €150", tb3:"€150 to €250",
+  tb4:"More than €250", tb5:"I do not know",
+  qTeamFreq:"How often does your team go on an offsite?",
+  tf1:"Never", tf2:"Once a year", tf3:"Two or three times a year", tf4:"More often",
+  fsSupport:"Supporting the project",
+  qSupport:"Beyond using the place, would you be open to any of these forms of support? (choose any)",
+  s1:"A donation towards restoring the buildings",
+  s2:"A crowdfunding campaign",
+  s3:"An interest-bearing loan or participating securities",
+  s4:"Corporate patronage or a partnership",
+  s5:"Time or skills (technical, musical, craft)",
+  s6:"None — I mainly want somewhere to work",
   fsContact:"Stay informed",
   qEmail:"Email (optional — to receive the results and an invitation to the pilot)",
   qFree:"Anything to add? What you would want to find there, what is missing, your doubts.",
   submit:"Send my answers",
   privacy:"Your answers are used for this study only. They are neither resold nor shared.",
   footAddr:"La Ferme des Luthiers · La Couture-Boussey, Eure, Normandy",
-  footNote:"A project under study. This site sets out an intention, not a commercial offer: no space is currently available to rent.",
+  footNote:"A project under study. This site sets out an intention, not a commercial offer: nothing is open, no service is being sold and no premises are available to rent.",
+  footHeritage:"La Ferme des Luthiers is private property. The estate is neither listed nor registered as a historic monument.",
 
-  metaTitle:"Lutherium — A workspace for music and creation · La Couture-Boussey",
+  metaTitle:"Lutherium — A campus for music, creation and instrument making · La Couture-Boussey",
   sendingOk:"Thank you — your answers have been recorded. They genuinely shape what happens next.",
   sendingMail:"Your email app is opening with your answers ready to send. Press send to submit them.",
   sendingErr:"Sending failed. You can email your answers directly to ",
@@ -806,6 +1063,8 @@ document.querySelectorAll(".lang button").forEach(b =>
 })();
 
 /* ------------------------- form handling ------------------------- */
+/* Champs à cases à cocher : plusieurs valeurs pour une même clé. */
+const MULTI = new Set(["criteres", "soutien"]);
 const form = document.getElementById("survey");
 const msg = document.getElementById("formMsg");
 
@@ -813,7 +1072,7 @@ function collect(){
   const fd = new FormData(form);
   const data = {};
   for (const [k, v] of fd.entries()){
-    if (k === "criteres") (data.criteres ||= []).push(v);
+    if (MULTI.has(k)) (data[k] ||= []).push(v);
     else data[k] = v;
   }
   data.langue = document.documentElement.lang;
