@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lutherium.com/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lutherium.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lutherium.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lutherium.com/"/>
+    <image:image>
+      <image:loc>https://lutherium.com/images/maison-principale.jpg</image:loc>
+      <image:title>La Ferme des Luthiers, La Couture-Boussey</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/vue-aerienne-village.jpg</image:loc>
+      <image:title>Vue aérienne de La Couture-Boussey</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/salle-seminaire.jpg</image:loc>
+      <image:title>Salle de séminaire de 500 m²</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/salle-reception.jpg</image:loc>
+      <image:title>La grande salle de réception</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/bergerie.jpg</image:loc>
+      <image:title>La Bergerie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/forge.jpg</image:loc>
+      <image:title>La Forge et le four à pain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/hangar.jpg</image:loc>
+      <image:title>Le hangar de 550 m²</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/grange-pierre.jpg</image:loc>
+      <image:title>Grange en pierre du domaine</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/grange-lierre.jpg</image:loc>
+      <image:title>Grange couverte de lierre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lutherium.com/images/parc-exterieur.jpg</image:loc>
+      <image:title>Le parc du domaine</image:title>
+    </image:image>
+  </url>
+</urlset>

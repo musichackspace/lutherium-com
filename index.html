@@ -6,9 +6,33 @@
 <title>Lutherium — Campus pour la musique, la création et la facture instrumentale · La Couture-Boussey</title>
 <meta name="description" content="Lutherium : campus de travail et de création dédié à la musique, aux métiers de la création et à la facture instrumentale. Séminaires et offsites, résidences de création, journées accompagnées — dans une ferme de facteurs de flûtes du XVIIIᵉ siècle à La Couture-Boussey, Eure, à 80 km de Paris." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Lutherium — La Ferme des Luthiers" />
-<meta property="og:description" content="Séminaires, résidences de création et journées de travail accompagnées, au cœur du village de la facture instrumentale." />
-<meta property="og:image" content="/images/maison-principale.jpg" />
+<meta property="og:site_name" content="Lutherium" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_GB" />
+<meta property="og:url" content="https://lutherium.com/" />
+<meta property="og:title" content="Lutherium — La Ferme des Luthiers, campus pour la musique et la facture instrumentale" />
+<meta property="og:description" content="Séminaires, résidences de création et journées de travail accompagnées, au cœur du village de la facture instrumentale — La Couture-Boussey, Normandie, à 80 km de Paris." />
+<meta property="og:image" content="https://lutherium.com/images/maison-principale.jpg" />
+<meta property="og:image:width" content="1800" />
+<meta property="og:image:height" content="1011" />
+<meta property="og:image:alt" content="La Ferme des Luthiers, maison de facteurs de flûtes du XVIIIᵉ siècle à La Couture-Boussey" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lutherium — La Ferme des Luthiers" />
+<meta name="twitter:description" content="Séminaires, résidences de création et journées de travail accompagnées, au cœur du village de la facture instrumentale." />
+<meta name="twitter:image" content="https://lutherium.com/images/maison-principale.jpg" />
+<link rel="canonical" href="https://lutherium.com/" />
+<link rel="alternate" hreflang="fr" href="https://lutherium.com/" />
+<link rel="alternate" hreflang="en" href="https://lutherium.com/?lang=en" />
+<link rel="alternate" hreflang="x-default" href="https://lutherium.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="author" content="Jean-Baptiste Thiebaut" />
+<meta name="theme-color" content="#6f7d66" />
+<meta name="geo.region" content="FR-27" />
+<meta name="geo.placename" content="La Couture-Boussey" />
+<meta name="geo.position" content="48.8836;1.3419" />
+<meta name="ICBM" content="48.8836, 1.3419" />
+<link rel="preload" as="image" href="images/maison-principale-1800.webp" imagesrcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" imagesizes="100vw" fetchpriority="high" />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8471' stroke-width='2' stroke-linecap='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>" />
 <style>
   :root{
@@ -83,7 +107,10 @@
   @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
   .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
   @media(max-width:840px){.split{grid-template-columns:1fr}}
-  .figure img{width:100%;border-radius:10px;display:block;box-shadow:0 14px 40px -18px rgba(43,39,34,.45)}
+  /* <picture> ne sert qu'a proposer le WebP : il disparait de la mise en page
+     pour que les selecteurs existants (.hero img, .figure img, .space img) tiennent. */
+  picture{display:contents}
+  .figure img{width:100%;height:auto;border-radius:10px;display:block;box-shadow:0 14px 40px -18px rgba(43,39,34,.45)}
   .cap{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;color:var(--ink-soft);
     margin-top:.6rem;font-style:normal}
 
@@ -103,7 +130,7 @@
   /* spaces */
   .space{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;
     display:flex;flex-direction:column}
-  .space img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .space img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
   .space .body{padding:1.25rem 1.3rem 1.4rem}
   .space h3{margin-bottom:.3rem}
   .space p{font-size:.93rem;color:var(--ink-soft);margin:0}
@@ -222,6 +249,102 @@
   gtag("js", new Date());
   gtag("config", "G-DH3B853NGK");
 </script>
+
+<!-- Donnees structurees (schema.org). Volontairement limitees a ce qui est
+     factuel aujourd'hui : le lieu, l'organisation et le porteur. Aucun balisage
+     Offer/Product tant que les tarifs restent des hypotheses de travail. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://lutherium.com/#website",
+      "url": "https://lutherium.com/",
+      "name": "Lutherium",
+      "alternateName": "La Ferme des Luthiers",
+      "description": "Projet de campus de travail et de création dédié à la musique, aux métiers de la création et à la facture instrumentale, à La Couture-Boussey (Eure, Normandie).",
+      "inLanguage": ["fr-FR", "en-GB"],
+      "publisher": { "@id": "https://lutherium.com/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://lutherium.com/#webpage",
+      "url": "https://lutherium.com/",
+      "name": "Lutherium — Campus pour la musique, la création et la facture instrumentale",
+      "isPartOf": { "@id": "https://lutherium.com/#website" },
+      "about": { "@id": "https://lutherium.com/#organization" },
+      "primaryImageOfPage": { "@id": "https://lutherium.com/#primaryimage" },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://lutherium.com/#primaryimage",
+      "url": "https://lutherium.com/images/maison-principale.jpg",
+      "contentUrl": "https://lutherium.com/images/maison-principale.jpg",
+      "width": 1800,
+      "height": 1011,
+      "caption": "La Ferme des Luthiers, maison de facteurs de flûtes du XVIIIᵉ siècle à La Couture-Boussey"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lutherium.com/#organization",
+      "name": "Lutherium",
+      "alternateName": "La Ferme des Luthiers",
+      "url": "https://lutherium.com/",
+      "email": "jb@musichackspace.org",
+      "logo": { "@id": "https://lutherium.com/#primaryimage" },
+      "image": { "@id": "https://lutherium.com/#primaryimage" },
+      "description": "Campus de travail et de création à l'étude, dédié à la musique, aux métiers de la création et à la facture instrumentale : séminaires et offsites d'équipe, résidences de création, journées de travail accompagnées.",
+      "founder": { "@id": "https://lutherium.com/#founder" },
+      "location": { "@id": "https://lutherium.com/#place" },
+      "areaServed": ["FR", "GB", "EU"],
+      "knowsAbout": [
+        "facture instrumentale",
+        "lutherie",
+        "instruments à vent",
+        "résidence de création",
+        "séminaire d'entreprise",
+        "patrimoine rural",
+        "musique et technologie"
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://lutherium.com/#place",
+      "name": "La Ferme des Luthiers",
+      "description": "Ferme de facteurs de flûtes du XVIIIᵉ siècle : six bâtiments sur deux hectares, dont 500 m² de salles de réception et un hangar de 550 m², en bordure du bourg de La Couture-Boussey.",
+      "url": "https://lutherium.com/",
+      "image": "https://lutherium.com/images/maison-principale.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "La Couture-Boussey",
+        "addressRegion": "Normandie",
+        "postalCode": "27750",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8836,
+        "longitude": 1.3419
+      },
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Eure, Normandie, France"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://lutherium.com/#founder",
+      "name": "Jean-Baptiste Thiebaut",
+      "email": "jb@musichackspace.org",
+      "jobTitle": "Porteur du projet Lutherium",
+      "description": "Descendant de la famille Lot, facteurs de flûtes traversières, propriétaire de La Ferme des Luthiers et directeur de Music Hackspace.",
+      "worksFor": { "@id": "https://lutherium.com/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -237,8 +360,8 @@
       <a class="nlink" href="#contact" data-i18n="navContact">Nous écrire</a>
       <a class="nlink" href="#etude" data-i18n="navSurvey">Participer</a>
       <div class="lang">
-        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="true" lang="fr" aria-label="Afficher le site en français">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="View this site in English">EN</button>
       </div>
     </nav>
   </div>
@@ -248,7 +371,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/maison-principale.jpg" alt="La Ferme des Luthiers, La Couture-Boussey" />
+  <picture>
+          <source type="image/webp" sizes="100vw" srcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" />
+          <img src="images/maison-principale.jpg" width="1800" height="1011" decoding="async" fetchpriority="high" alt="Façade de La Ferme des Luthiers, ancienne maison de facteurs de flûtes à La Couture-Boussey, Eure" />
+        </picture>
   <div class="wrap">
     <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 80 km de Paris</span>
     <h1 data-i18n="heroTitle">Là où l'on fabriquait des flûtes, on fabriquera des idées.</h1>
@@ -273,7 +399,10 @@
         <p data-i18n="visionP3"><strong>Lutherium propose de leur donner un quatrième usage :</strong> un lieu de travail et de création où des musiciens, des développeurs, des designers, des startups et des organisations culturelles viennent se concentrer, produire et se rencontrer — relié en permanence à une communauté internationale par la fibre, un studio et un programme en ligne.</p>
       </div>
       <div class="figure">
-        <img src="images/vue-aerienne-village.jpg" alt="Vue aérienne de La Couture-Boussey" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/vue-aerienne-village-900.webp 900w, images/vue-aerienne-village-1800.webp 1800w" />
+          <img src="images/vue-aerienne-village.jpg" width="1800" height="1272" decoding="async" loading="lazy" alt="Vue aérienne de La Couture-Boussey et du domaine de La Ferme des Luthiers en bordure du bourg" />
+        </picture>
         <p class="cap" data-i18n="visionCap">La Couture-Boussey, Eure — le domaine en bordure du bourg historique.</p>
       </div>
     </div>
@@ -327,7 +456,10 @@
 
     <div class="grid g3" style="margin-top:2.6rem">
       <article class="space">
-        <img src="images/salle-seminaire.jpg" alt="Salle de séminaire" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/salle-seminaire-900.webp 900w, images/salle-seminaire-1800.webp 1800w" />
+          <img src="images/salle-seminaire.jpg" width="1800" height="1268" decoding="async" loading="lazy" alt="Salle de séminaire de 500 m² sous charpente apparente, aménagée pour un atelier de travail" />
+        </picture>
         <div class="body">
           <span class="chip c-now" data-i18n="chipNow">Opérationnel</span>
           <h3 data-i18n="sp1t">Les salles de réception — 500 m²</h3>
@@ -335,7 +467,10 @@
         </div>
       </article>
       <article class="space">
-        <img src="images/salle-reception.jpg" alt="Grande salle en configuration réception" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/salle-reception-900.webp 900w, images/salle-reception-1800.webp 1800w" />
+          <img src="images/salle-reception.jpg" width="1800" height="1200" decoding="async" loading="lazy" alt="La grande salle de réception du domaine, configurée pour un concert ou un événement" />
+        </picture>
         <div class="body">
           <span class="chip c-now" data-i18n="chipNow2">Opérationnel</span>
           <h3 data-i18n="sp2t">La grande salle — événements</h3>
@@ -343,7 +478,10 @@
         </div>
       </article>
       <article class="space">
-        <img src="images/bergerie.jpg" alt="La Bergerie" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/bergerie-900.webp 900w, images/bergerie-1800.webp 1800w" />
+          <img src="images/bergerie.jpg" width="1800" height="1350" decoding="async" loading="lazy" alt="La Bergerie rénovée, destinée aux résidences de création et à l'hébergement" />
+        </picture>
         <div class="body">
           <span class="chip c-next" data-i18n="chipNext">Phase 2</span>
           <h3 data-i18n="sp3t">La Bergerie</h3>
@@ -351,7 +489,10 @@
         </div>
       </article>
       <article class="space">
-        <img src="images/forge.jpg" alt="La Forge" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/forge-900.webp 900w, images/forge-1800.webp 1800w" />
+          <img src="images/forge.jpg" width="1800" height="1114" decoding="async" loading="lazy" alt="La Forge et le four à pain, futurs ateliers de lutherie et de fabrication" />
+        </picture>
         <div class="body">
           <span class="chip c-next" data-i18n="chipNext2">Phase 2</span>
           <h3 data-i18n="sp4t">La Forge et le four à pain</h3>
@@ -359,7 +500,10 @@
         </div>
       </article>
       <article class="space">
-        <img src="images/hangar.jpg" alt="Le hangar de 550 m²" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/hangar-900.webp 900w, images/hangar-1800.webp 1800w" />
+          <img src="images/hangar.jpg" width="1800" height="1216" decoding="async" loading="lazy" alt="Le hangar de 550 m², volume brut destiné aux studios acoustiques et à la salle de répétition" />
+        </picture>
         <div class="body">
           <span class="chip c-next" data-i18n="chipNext3">Phase 3</span>
           <h3 data-i18n="sp5t">Le hangar — 550 m²</h3>
@@ -367,7 +511,10 @@
         </div>
       </article>
       <article class="space">
-        <img src="images/grange-pierre.jpg" alt="Grange en pierre" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, (max-width:900px) 46vw, 31vw" srcset="images/grange-pierre-900.webp 900w, images/grange-pierre-1800.webp 1800w" />
+          <img src="images/grange-pierre.jpg" width="1800" height="1348" decoding="async" loading="lazy" alt="Grange en pierre du domaine et parcelles attenantes" />
+        </picture>
         <div class="body">
           <span class="chip c-next" data-i18n="chipNext4">Phase 3</span>
           <h3 data-i18n="sp6t">Granges et terrain</h3>
@@ -417,7 +564,10 @@
         </div>
       </div>
       <div class="figure">
-        <img src="images/grange-pierre.jpg" alt="Grange de pierre du domaine" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/grange-pierre-900.webp 900w, images/grange-pierre-1800.webp 1800w" />
+          <img src="images/grange-pierre.jpg" width="1800" height="1348" decoding="async" loading="lazy" alt="Maçonnerie de pierre d'une grange du domaine, enveloppe à restaurer avant tout usage nouveau" />
+        </picture>
         <p class="cap" data-i18n="herCap">Les bâtiments de pierre — l'enveloppe à restaurer avant tout usage nouveau.</p>
       </div>
     </div>
@@ -545,7 +695,10 @@
         </div>
       </div>
       <div class="figure">
-        <img src="images/parc-exterieur.jpg" alt="Le parc du domaine" />
+        <picture>
+          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/parc-exterieur-900.webp 900w, images/parc-exterieur-1800.webp 1800w" />
+          <img src="images/parc-exterieur.jpg" width="1800" height="1234" decoding="async" loading="lazy" alt="Le parc du domaine, utilisé pour la restauration, les événements et le travail en extérieur" />
+        </picture>
         <p class="cap" data-i18n="revCap">Le parc — restauration, événements et travail en extérieur à la belle saison.</p>
       </div>
     </div>
@@ -595,7 +748,10 @@
       <p data-i18n="whoP3" class="note" style="color:rgba(240,236,229,.62)">Il conseille par ailleurs Mindset Music Ventures et dirige Chordline Ventures, structures d'investissement sans lien capitalistique avec Lutherium ni avec le domaine.</p>
     </div>
     <div class="figure">
-      <img src="images/grange-lierre.jpg" alt="Grange couverte de lierre" />
+      <picture>
+          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/grange-lierre-900.webp 900w, images/grange-lierre-1800.webp 1800w" />
+          <img src="images/grange-lierre.jpg" width="1800" height="1205" decoding="async" loading="lazy" alt="Grange du domaine couverte de lierre" />
+        </picture>
     </div>
   </div>
 </section>
@@ -1075,6 +1231,7 @@ const EN = {
   consentNo:"Decline", consentYes:"Accept",
 
   metaTitle:"Lutherium — A campus for music, creation and instrument making · La Couture-Boussey",
+  metaDesc:"Lutherium: a proposed campus for work and creation dedicated to music, the creative professions and instrument making. Team offsites, creative residencies, hosted working days — in an 18th-century flute makers' farm at La Couture-Boussey, Normandy, 80 km from Paris.",
   sendingOk:"Thank you — your answers have been recorded. They genuinely shape what happens next.",
   sendingMail:"Your email app is opening with your answers ready to send. Press send to submit them.",
   sendingErr:"Sending failed. You can email your answers directly to ",
@@ -1087,6 +1244,7 @@ const NODES = document.querySelectorAll("[data-i18n]");
 NODES.forEach(n => FR[n.dataset.i18n] = n.innerHTML);
 const FR_EXTRA = {
   metaTitle: document.title,
+  metaDesc: (document.querySelector('meta[name="description"]') || {}).content || "",
   sendingOk:"Merci — vos réponses sont enregistrées. Elles pèsent réellement sur la suite.",
   sendingMail:"Votre messagerie s'ouvre avec vos réponses prêtes à partir. Appuyez sur envoyer pour les transmettre.",
   sendingErr:"L'envoi a échoué. Vous pouvez écrire directement à ",
@@ -1100,6 +1258,14 @@ function setLang(lang){
   STR = lang === "en" ? EN : FR_EXTRA;
   document.documentElement.lang = lang;
   document.title = STR.metaTitle;
+  /* Le head doit decrire la langue reellement affichee : titre, description,
+     et l'URL canonique qui porte le parametre ?lang=. */
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.content = STR.metaDesc;
+  const ogl = document.querySelector('meta[property="og:locale"]');
+  if (ogl) ogl.content = lang === "en" ? "en_GB" : "fr_FR";
+  const can = document.querySelector('link[rel="canonical"]');
+  if (can) can.href = lang === "en" ? "https://lutherium.com/?lang=en" : "https://lutherium.com/";
   const em = document.getElementById("email");
   if (em) em.placeholder = STR.placeholderEmail;
   document.querySelectorAll(".lang button").forEach(b =>
