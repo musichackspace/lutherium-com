@@ -124,7 +124,7 @@ source de revenu — c'est ce qui permet d'assumer un bassin de population faibl
 | Mise aux normes ERP (types O et N) sous-estimée | **Élevée — nouveau risque n°1** | Instruire avec la commission de sécurité et l'ABF **avant** tout aménagement ; chiffrer en phase 2 ; démarrer le pilote sans hébergement propre |
 | Exploitation hôtelière et restauration : métier que nous n'avons pas | Élevée | Recruter ou s'associer à un profil d'accueil dès la phase 2 ; sous-traiter les nuitées pendant le pilote |
 | Saisonnalité de l'hébergement, remplissage en semaine | Moyenne | Séjours d'équipe en semaine, week-ends de création le week-end : les deux segments se complètent |
-| Accès en train et dernier kilomètre difficiles | Moyenne | Navette gare, covoiturage, forfaits week-end |
+| Accès sans voiture depuis la gare de Bueil (5 min) | Faible | Navette gare, covoiturage, forfaits week-end |
 | Saisonnalité — bâtiments anciens et hivers normands | Moyenne | Chauffer d'abord un noyau restreint ; programmer l'hiver en intérieur |
 | Coût de rénovation du hangar sous-estimé | Élevée (phase 3) | Repousser en phase 3 ; conditionner à un financement externe |
 | Le projet repose sur une seule personne | Moyenne | Recruter une gestion de site dès la phase 2 |
