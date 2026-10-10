@@ -1,5 +1,5 @@
-# https://lutherium.com/
+# https://leclosdesclefs.com/
 User-agent: *
 Allow: /
 
-Sitemap: https://lutherium.com/sitemap.xml
+Sitemap: https://leclosdesclefs.com/sitemap.xml
