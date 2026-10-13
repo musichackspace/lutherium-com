@@ -56,14 +56,16 @@ Option values in the form are French labels (`Mariage`, `50 à 100`…) and do n
 with the display language, so every enquiry arrives readable.
 
 The *Demander une date* / *Demander un devis* buttons carry `data-type` and pre-select the
-event type in the form. GA4 events: `cta_click`, `enquiry_submit` (only with consent).
+event type in the form; *Demander les disponibilités* (`data-rooms`) pre-selects
+« Oui » for on-site bedrooms. GA4 events: `cta_click`, `enquiry_submit` (only with consent).
 
 ## Section order
 
-hero · `#mariages` · `#seminaires` · `#lieu` · `#histoire` · `#acces` · `#contact`
+hero · `#mariages` · `#seminaires` · `#chambres` · `#lieu` · `#histoire` · `#acces` · `#contact`
 
 ## What the copy deliberately does not say
 
-No capacity, price, curfew or caterer policy appears anywhere — none has been decided
-for the site yet. Add them only once they are confirmed; they are the next most useful
+The only figure given for accommodation is **ten bedrooms on site** — no room types,
+rates or per-room capacity. No event capacity, price, curfew or caterer policy appears
+anywhere either — none has been decided for the site yet. Add them only once they are confirmed; they are the next most useful
 additions, together with photos of real weddings.

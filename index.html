@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Le Clos des Clefs — Lieu de réception pour mariages et séminaires · La Couture-Boussey, Eure</title>
-<meta name="description" content="Le Clos des Clefs : une maison de maître, des granges et un parc de deux hectares pour votre mariage ou votre séminaire, dans une maison de facteurs de flûtes à La Couture-Boussey (Eure), à une heure de Paris. 500 m² de salles de réception." />
+<meta name="description" content="Le Clos des Clefs : une maison de maître, des granges et un parc de deux hectares pour votre mariage ou votre séminaire, dans une maison de facteurs de flûtes à La Couture-Boussey (Eure), à une heure de Paris. 500 m² de salles de réception et dix chambres sur place." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Le Clos des Clefs" />
 <meta property="og:locale" content="fr_FR" />
@@ -63,10 +63,10 @@
   .brand{font-weight:600;font-size:1.16rem;letter-spacing:.01em;text-decoration:none;color:var(--ink)}
   .brand span{color:var(--sage);font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;
     font-family:ui-sans-serif,system-ui,sans-serif;margin-left:.55rem}
-  @media(max-width:520px){.brand span{display:none}}
-  nav{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
+  @media(max-width:1240px){.brand span{display:none}}
+  nav{margin-left:auto;display:flex;align-items:center;gap:1.1rem}
   nav a{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.86rem;color:var(--ink-soft);
-    text-decoration:none}
+    text-decoration:none;white-space:nowrap}
   nav a:hover{color:var(--sage-d)}
   nav a.ncta{color:#fff;background:var(--sage);padding:.45rem .95rem;border-radius:7px;font-weight:600}
   nav a.ncta:hover{background:var(--sage-d);color:#fff}
@@ -287,7 +287,8 @@
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Salles de réception — 500 m²", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Parc de deux hectares", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Stationnement sur place", "value": true }
+        { "@type": "LocationFeatureSpecification", "name": "Stationnement sur place", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Dix chambres sur place", "value": 10 }
       ]
     }
   ]
@@ -302,6 +303,7 @@
     <nav>
       <a class="nlink" href="#mariages" data-i18n="navWeddings">Mariages</a>
       <a class="nlink" href="#seminaires" data-i18n="navSeminars">Séminaires</a>
+      <a class="nlink" href="#chambres" data-i18n="navRooms">Chambres</a>
       <a class="nlink" href="#lieu" data-i18n="navPlace">Le lieu</a>
       <a class="nlink" href="#histoire" data-i18n="navStory">L'histoire</a>
       <a class="nlink" href="#acces" data-i18n="navAccess">Accès</a>
@@ -326,7 +328,7 @@
     <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 1&nbsp;h&nbsp;de&nbsp;Paris</span>
     <h1 data-i18n="heroTitle">Mariages et séminaires</h1>
     <p class="sub" data-i18n="heroSub">Dans un lieu historique de facteurs d'instruments à vent</p>
-    <p class="lede" data-i18n="heroLede">Une maison de maître, des granges couvertes de lierre et un parc de deux hectares, en bordure d'un village normand qui fabrique des flûtes, des hautbois et des clarinettes depuis le XVIIᵉ siècle.</p>
+    <p class="lede" data-i18n="heroLede">Une maison de maître, des granges couvertes de lierre un parc de deux hectares et dix chambres, en bordure d'un village normand qui fabrique des flûtes, des hautbois et des clarinettes depuis le XVIIᵉ siècle.</p>
     <div class="btns">
       <a class="btn btn-p" href="#contact" data-type="Mariage" data-i18n="heroCta1">Demander une date</a>
       <a class="btn btn-g" href="#mariages" data-i18n="heroCta2">Se marier au Clos</a>
@@ -373,7 +375,7 @@
       </div>
     </div>
 
-    <p style="margin-top:2.2rem;max-width:42rem" data-i18n="wedNote">Traiteur, musique, fleurs, hébergement de vos invités : dites-nous comment vous imaginez la journée, et nous vous aidons à l'organiser.</p>
+    <p style="margin-top:2.2rem;max-width:42rem" data-i18n="wedNote">Traiteur, musique, fleurs, chambres pour vos proches : dites-nous comment vous imaginez la journée, et nous vous aidons à l'organiser.</p>
     <div class="btns" style="margin-top:1rem">
       <a class="btn btn-p" href="#contact" data-type="Mariage" data-i18n="wedCta">Demander une date pour votre mariage</a>
     </div>
@@ -385,7 +387,7 @@
   <div class="wrap">
     <span class="eyebrow" data-i18n="semEyebrow">Séminaires</span>
     <h2 data-i18n="semTitle">Un séminaire au vert, à une heure de Paris</h2>
-    <p class="lede" data-i18n="semLede">Une journée de travail, un comité de direction ou un séminaire de plusieurs jours : de grandes salles lumineuses, un parc pour respirer entre deux sessions, et une histoire à raconter à vos équipes.</p>
+    <p class="lede" data-i18n="semLede">Une journée de travail, un comité de direction ou un séminaire de plusieurs jours : de grandes salles lumineuses, dix chambres sur place, un parc pour respirer entre deux sessions, et une histoire à raconter à vos équipes.</p>
 
     <div class="split" style="margin-top:2.8rem">
       <div class="figure">
@@ -425,8 +427,39 @@
   </div>
 </section>
 
+<!-- CHAMBRES
+     Dix chambres : le seul chiffre arrete. Pas de tarif ni de detail par
+     chambre tant qu'ils ne sont pas fixes, et pas de photo tant qu'il n'y en
+     a pas de vraie. -->
+<section id="chambres">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="roomsEyebrow">Dormir sur place</span>
+    <h2 data-i18n="roomsTitle">Dix chambres au domaine</h2>
+    <p class="lede" data-i18n="roomsLede">Le Clos compte dix chambres. On ne reprend pas la route après la fête, et un séminaire peut durer plusieurs jours sans quitter le lieu.</p>
+
+    <div class="grid g3" style="margin-top:2.4rem">
+      <div class="card">
+        <h3 data-i18n="rooms1t">Pour un mariage</h3>
+        <p data-i18n="rooms1p">Les mariés et leurs proches dorment au Clos : on se prépare sur place le matin, et l'on se retrouve le lendemain sans prendre la voiture.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="rooms2t">Pour un séminaire</h3>
+        <p data-i18n="rooms2p">Arriver la veille, travailler deux ou trois jours d'affilée, dîner ensemble : dix chambres pour une équipe resserrée ou un comité de direction.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="rooms3t">Pour les autres invités</h3>
+        <p data-i18n="rooms3p">Au-delà de dix chambres, gîtes, chambres d'hôtes et hôtels des environs prennent le relais : nous vous indiquons les adresses.</p>
+      </div>
+    </div>
+
+    <div class="btns" style="margin-top:2.2rem">
+      <a class="btn btn-p" href="#contact" data-rooms="Oui" data-i18n="roomsCta">Demander les disponibilités</a>
+    </div>
+  </div>
+</section>
+
 <!-- LIEU -->
-<section id="lieu">
+<section id="lieu" style="background:var(--paper-2)">
   <div class="wrap">
     <span class="eyebrow" data-i18n="placeEyebrow">Le lieu</span>
     <h2 data-i18n="placeTitle">Une maison, des granges, un parc</h2>
@@ -519,8 +552,8 @@
         <p data-i18n="acc2p">80 km de Paris par l'A13 puis la N13, environ une heure hors heures de pointe. Stationnement sur place, deux accès distincts au domaine.</p>
       </div>
       <div class="card">
-        <h3 data-i18n="acc3t">Loger vos invités</h3>
-        <p data-i18n="acc3p">Le domaine n'a pas encore de chambres pour vos invités. Gîtes, chambres d'hôtes et hôtels des environs peuvent les accueillir : nous vous indiquons les adresses.</p>
+        <h3 data-i18n="acc3t">Dormir sur place</h3>
+        <p data-i18n="acc3p">Dix chambres au domaine pour vos proches ou votre équipe. Pour les autres invités, gîtes, chambres d'hôtes et hôtels des environs : nous vous indiquons les adresses.</p>
       </div>
     </div>
   </div>
@@ -562,9 +595,19 @@
           </select>
         </div>
       </div>
-      <div class="field">
-        <label for="date" data-i18n="qDate">Date souhaitée</label>
-        <input type="text" id="date" name="date" autocomplete="off" />
+      <div class="fields2">
+        <div class="field">
+          <label for="date" data-i18n="qDate">Date souhaitée</label>
+          <input type="text" id="date" name="date" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="chambres" data-i18n="qRooms">Chambres sur place</label>
+          <select id="chambres" name="chambres">
+            <option value="À voir" data-i18n="cr0">À voir</option>
+            <option value="Oui" data-i18n="cr1">Oui, nous aimerions dormir sur place</option>
+            <option value="Non" data-i18n="cr2">Non merci</option>
+          </select>
+        </div>
       </div>
       <div class="fields2">
         <div class="field">
@@ -638,13 +681,13 @@ const CONTACT_EMAIL = "jb@musichackspace.org";
 /* ---------------------------- i18n ---------------------------- */
 const EN = {
   brandSub:"Weddings · Seminars",
-  navWeddings:"Weddings", navSeminars:"Seminars", navPlace:"The place",
+  navWeddings:"Weddings", navSeminars:"Seminars", navRooms:"Rooms", navPlace:"The place",
   navStory:"The story", navAccess:"Getting here", navContact:"Contact us",
 
   heroTag:"La Couture-Boussey · Normandy · 1&nbsp;h&nbsp;from&nbsp;Paris",
   heroTitle:"Weddings and seminars",
   heroSub:"In a historic home of wind-instrument makers",
-  heroLede:"A manor house, ivy-covered barns and two hectares of parkland, on the edge of a Normandy village that has made flutes, oboes and clarinets since the 17th century.",
+  heroLede:"A manor house, ivy-covered barns, two hectares of parkland and ten bedrooms, on the edge of a Normandy village that has made flutes, oboes and clarinets since the 17th century.",
   heroCta1:"Check a date",
   heroCta2:"Weddings at the Clos",
 
@@ -660,12 +703,12 @@ const EN = {
   wed4t:"The party",
   wed4p:"You dance in a village that has made instruments since the 17th century. Musicians, DJ or band: music is at home here.",
   wedCap:"The park, facing the house — ceremonies and drinks receptions in the warmer months.",
-  wedNote:"Caterer, music, flowers, somewhere for your guests to stay: tell us how you picture the day and we will help you put it together.",
+  wedNote:"Caterer, music, flowers, rooms for your family and friends: tell us how you picture the day and we will help you put it together.",
   wedCta:"Check a date for your wedding",
 
   semEyebrow:"Seminars",
   semTitle:"A seminar in the countryside, an hour from Paris",
-  semLede:"A working day, a board meeting or a seminar over several days: large, light-filled rooms, a park to breathe in between sessions, and a story to tell your team.",
+  semLede:"A working day, a board meeting or a seminar over several days: large, light-filled rooms, ten bedrooms on site, a park to breathe in between sessions, and a story to tell your team.",
   semCap:"The reception rooms, set up for a working day.",
   sem1t:"Rooms that adapt",
   sem1p:"500 m² under an exposed timber frame: plenary, breakout workshops, or one long table for lunch.",
@@ -706,8 +749,19 @@ const EN = {
   acc1p:"Paris Saint-Lazare to Bueil, under an hour on the Normandy line, with frequent services. The station is five minutes by road from the estate.",
   acc2t:"By car",
   acc2p:"80 km from Paris via the A13 then the N13, about an hour outside peak times. Parking on site, two separate entrances to the estate.",
-  acc3t:"Somewhere for your guests to stay",
-  acc3p:"The estate does not yet have rooms for your guests. Gîtes, B&Bs and hotels nearby can host them: we will point you to them.",
+  acc3t:"Staying over",
+  acc3p:"Ten bedrooms on the estate for your family and friends or your team. For other guests, there are gîtes, B&Bs and hotels nearby: we will point you to them.",
+
+  roomsEyebrow:"Staying over",
+  roomsTitle:"Ten bedrooms on the estate",
+  roomsLede:"The Clos has ten bedrooms. Nobody has to drive home after the party, and a seminar can run over several days without leaving the place.",
+  rooms1t:"For a wedding",
+  rooms1p:"The couple and their closest family and friends sleep at the Clos: you get ready on site in the morning and meet again the next day without getting in the car.",
+  rooms2t:"For a seminar",
+  rooms2p:"Arrive the evening before, work two or three days in a row, have dinner together: ten bedrooms for a small team or a leadership group.",
+  rooms3t:"For other guests",
+  rooms3p:"Beyond ten bedrooms, gîtes, B&Bs and hotels nearby take over: we will point you to them.",
+  roomsCta:"Check availability",
 
   ctEyebrow:"Contact us",
   ctTitle:"Tell us about your plans",
@@ -718,6 +772,8 @@ const EN = {
   qGuests:"Number of guests",
   g0:"Not sure yet", g1:"Fewer than 50", g2:"50 to 100", g3:"100 to 150", g4:"150 to 200", g5:"More than 200",
   qDate:"Preferred date",
+  qRooms:"Bedrooms on site",
+  cr0:"Not sure yet", cr1:"Yes, we would like to stay over", cr2:"No thanks",
   qName:"Your name",
   qPhone:"Phone (optional)",
   qEmail:"Email",
@@ -734,8 +790,8 @@ const EN = {
   consentNo:"Decline", consentYes:"Accept",
 
   metaTitle:"Le Clos des Clefs — Wedding and seminar venue · La Couture-Boussey, Normandy",
-  metaDesc:"Le Clos des Clefs: a manor house, barns and two hectares of parkland for your wedding or seminar, in a flute makers' estate at La Couture-Boussey, Normandy, an hour from Paris. 500 m² of reception rooms.",
-  placeholderDate:"e.g. Saturday 12 June 2027, or “summer 2027”",
+  metaDesc:"Le Clos des Clefs: a manor house, barns and two hectares of parkland for your wedding or seminar, in a flute makers' estate at La Couture-Boussey, Normandy, an hour from Paris. 500 m² of reception rooms and ten bedrooms on site.",
+  placeholderDate:"e.g. 12 June 2027, or summer 2027",
   placeholderEmail:"you@example.com",
   mailSubject:"enquiry",
   needed:"Please give your name and a valid email address so we can reply.",
@@ -753,7 +809,7 @@ NODES.forEach(n => FR[n.dataset.i18n] = n.innerHTML);
 const FR_EXTRA = {
   metaTitle: document.title,
   metaDesc: (document.querySelector('meta[name="description"]') || {}).content || "",
-  placeholderDate:"ex. samedi 12 juin 2027, ou « été 2027 »",
+  placeholderDate:"ex. 12 juin 2027, ou été 2027",
   placeholderEmail:"vous@exemple.com",
   mailSubject:"demande",
   needed:"Indiquez votre nom et une adresse e-mail valide, pour que nous puissions vous répondre.",
@@ -831,6 +887,12 @@ function track(name, params){
 
 /* ------------------------- formulaire de contact ------------------------- */
 const form = document.getElementById("enquiry");
+document.querySelectorAll('a[href="#contact"][data-rooms]').forEach(a => {
+  a.addEventListener("click", () => {
+    document.getElementById("chambres").value = a.dataset.rooms;
+    track("cta_click", { type: "Chambres", cta: a.dataset.i18n || "" });
+  });
+});
 const msg = document.getElementById("formMsg");
 const typeSel = document.getElementById("type");
 
