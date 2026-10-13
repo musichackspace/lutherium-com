@@ -48,15 +48,20 @@ The Worker accepts only the site's origins, validates name and email, caps field
 and drops submissions that fill the hidden `site_web` honeypot. If sending fails, the
 visitor sees the email address to write to directly.
 
-Deploy / update (from `contact-worker/`):
+Deploy / update — **run from inside `contact-worker/`**, where `wrangler.toml` gives the
+Worker name and the Cloudflare account (the login has two accounts):
 
 ```sh
+cd contact-worker
 npm install
 wrangler login                         # once
-heroku config:get MAILGUN_SMTP_USER -a chordline-ventures | wrangler secret put MAILGUN_SMTP_USER
-heroku config:get MAILGUN_SMTP_PASSWORD -a chordline-ventures | wrangler secret put MAILGUN_SMTP_PASSWORD
+heroku config:get MAILGUN_SMTP_USER -a chordline-ventures | tr -d '\n' | wrangler secret put MAILGUN_SMTP_USER
+heroku config:get MAILGUN_SMTP_PASSWORD -a chordline-ventures | tr -d '\n' | wrangler secret put MAILGUN_SMTP_PASSWORD
 wrangler deploy                        # also creates api.leclosdesclefs.com
 ```
+
+After a Mailgun password reset, update `certified-courses` and `chordline-ventures` on
+Heroku first, then re-run the `MAILGUN_SMTP_PASSWORD` line above.
 
 Recipient, sender and allowed origins are plain `[vars]` in `contact-worker/wrangler.toml`.
 Never put the SMTP credentials in that file: this repository is public.
