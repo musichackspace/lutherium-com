@@ -2,6 +2,7 @@
 # Memes identifiants SMTP que certified-courses et chordline-ventures :
 # a poser avec `wrangler secret put`, jamais dans ce fichier (le depot est public).
 name = "leclosdesclefs-contact"
+account_id = "72f2189e4af7b47633523e17336f4d6a"   # Music Hackspace and Chordline Ventures (zone leclosdesclefs.com)
 main = "src/index.js"
 compatibility_date = "2026-04-01"
 compatibility_flags = ["nodejs_compat"]
