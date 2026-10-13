@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://leclosdesclefs.com/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://leclosdesclefs.com/"/>
@@ -12,43 +12,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://leclosdesclefs.com/"/>
     <image:image>
       <image:loc>https://leclosdesclefs.com/images/maison-principale.jpg</image:loc>
-      <image:title>La Ferme des Luthiers, La Couture-Boussey</image:title>
+      <image:title>La maison de maître du Clos des Clefs, La Couture-Boussey</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/parc-exterieur.jpg</image:loc>
+      <image:title>Vin d'honneur dans le parc du Clos des Clefs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/salle-reception.jpg</image:loc>
+      <image:title>La grande salle dressée pour un dîner de mariage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/salle-seminaire.jpg</image:loc>
+      <image:title>Salle de réception aménagée pour un séminaire</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/grange-lierre.jpg</image:loc>
+      <image:title>Les granges couvertes de lierre et la cour</image:title>
     </image:image>
     <image:image>
       <image:loc>https://leclosdesclefs.com/images/vue-aerienne-village.jpg</image:loc>
       <image:title>Vue aérienne de La Couture-Boussey</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/salle-seminaire.jpg</image:loc>
-      <image:title>Salle de séminaire de 500 m²</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/salle-reception.jpg</image:loc>
-      <image:title>La grande salle de réception</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/bergerie.jpg</image:loc>
-      <image:title>La Bergerie</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/forge.jpg</image:loc>
-      <image:title>La Forge et le four à pain</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/hangar.jpg</image:loc>
-      <image:title>Le hangar de 550 m²</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/grange-pierre.jpg</image:loc>
-      <image:title>Grange en pierre du domaine</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/grange-lierre.jpg</image:loc>
-      <image:title>Grange couverte de lierre</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://leclosdesclefs.com/images/parc-exterieur.jpg</image:loc>
-      <image:title>Le parc du domaine</image:title>
     </image:image>
   </url>
 </urlset>
