@@ -38,19 +38,28 @@ defaulting to French.
 
 ## Where enquiries go
 
-At the top of the `<script>` block in `index.html`:
+The form POSTs JSON to `https://api.leclosdesclefs.com/` (`FORM_ENDPOINT` in `index.html`).
+That is a Cloudflare Worker in `contact-worker/` which sends the enquiry by **Mailgun SMTP
+(EU, sending domain `mail.musichackspace.org`)** — the same credentials as the
+`certified-courses` and `chordline-ventures` Heroku apps — to `jb@musichackspace.org`, with
+Reply-To set to the visitor, so replying to the email answers them.
 
-```js
-const FORM_ENDPOINT = "";
-const CONTACT_EMAIL = "jb@musichackspace.org";
+The Worker accepts only the site's origins, validates name and email, caps field lengths
+and drops submissions that fill the hidden `site_web` honeypot. If sending fails, the
+visitor sees the email address to write to directly.
+
+Deploy / update (from `contact-worker/`):
+
+```sh
+npm install
+wrangler login                         # once
+heroku config:get MAILGUN_SMTP_USER -a chordline-ventures | wrangler secret put MAILGUN_SMTP_USER
+heroku config:get MAILGUN_SMTP_PASSWORD -a chordline-ventures | wrangler secret put MAILGUN_SMTP_PASSWORD
+wrangler deploy                        # also creates api.leclosdesclefs.com
 ```
 
-- **Left empty (current setting)** — submitting opens the visitor's email client with the
-  enquiry pre-filled, addressed to `CONTACT_EMAIL`. A *copy my enquiry* button appears in
-  case the mail client does not open. Expect to lose a share of enquiries this way,
-  especially on mobile.
-- **Set to a URL** — the enquiry is POSTed as JSON. Any form backend that accepts JSON
-  works; [Formspree](https://formspree.io) (`https://formspree.io/f/xxxxxxx`) is the quickest.
+Recipient, sender and allowed origins are plain `[vars]` in `contact-worker/wrangler.toml`.
+Never put the SMTP credentials in that file: this repository is public.
 
 Option values in the form are French labels (`Mariage`, `50 à 100`…) and do not change
 with the display language, so every enquiry arrives readable.

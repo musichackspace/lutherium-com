@@ -627,6 +627,11 @@
         <label for="message" data-i18n="qMessage">Votre projet en quelques mots</label>
         <textarea id="message" name="message" rows="5"></textarea>
       </div>
+      <!-- Champ piege : invisible et ignore par un humain, rempli par les robots. -->
+      <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label for="site_web">Site web</label>
+        <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off" />
+      </div>
       <button type="submit" class="btn btn-p" data-i18n="submit">Envoyer ma demande</button>
       <p class="note" style="margin-top:.9rem" data-i18n="privacy">Vos coordonnées ne servent qu'à vous répondre. Elles ne sont ni revendues ni partagées.</p>
       <div id="formMsg" role="status" aria-live="polite"></div>
@@ -667,15 +672,12 @@
 
 <script>
 /* ------------------------------------------------------------------
-   Où partent les demandes de contact.
-
-   Laisser vide  -> le formulaire ouvre la messagerie du visiteur avec la
-                    demande pré-remplie (aucun serveur requis, mais une partie
-                    des demandes se perd, surtout sur mobile).
-   Renseigner    -> la demande est envoyée en POST JSON à cette URL
-                    (ex. Formspree : https://formspree.io/f/xxxxxxx).
+   Où partent les demandes de contact : vers le Worker Cloudflare de
+   contact-worker/, qui les envoie par le SMTP Mailgun (EU). Aucun identifiant
+   ici — le site est public. Si l'envoi échoue, le visiteur voit l'adresse
+   e-mail ci-dessous pour écrire directement.
 ------------------------------------------------------------------- */
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://api.leclosdesclefs.com/";
 const CONTACT_EMAIL = "jb@musichackspace.org";
 
 /* ---------------------------- i18n ---------------------------- */
@@ -793,13 +795,10 @@ const EN = {
   metaDesc:"Le Clos des Clefs: a manor house, barns and two hectares of parkland for your wedding or seminar, in a flute makers' estate at La Couture-Boussey, Normandy, an hour from Paris. 500 m² of reception rooms and ten bedrooms on site.",
   placeholderDate:"e.g. 12 June 2027, or summer 2027",
   placeholderEmail:"you@example.com",
-  mailSubject:"enquiry",
   needed:"Please give your name and a valid email address so we can reply.",
   sendingOk:"Thank you — your enquiry has been sent. We will be in touch shortly.",
-  sendingMail:"Your email app is opening with your enquiry ready to send. Press send to submit it.",
-  sendingErr:"Sending failed. You can email us directly at ",
-  copyBtn:"Email app did not open? Copy my enquiry",
-  copyDone:"Copied — paste it into an email to jb@musichackspace.org"
+  sending:"Sending…",
+  sendingErr:"Sending failed. You can email us directly at "
 };
 
 /* French = source of truth in the HTML; snapshot it on load. */
@@ -811,13 +810,10 @@ const FR_EXTRA = {
   metaDesc: (document.querySelector('meta[name="description"]') || {}).content || "",
   placeholderDate:"ex. 12 juin 2027, ou été 2027",
   placeholderEmail:"vous@exemple.com",
-  mailSubject:"demande",
   needed:"Indiquez votre nom et une adresse e-mail valide, pour que nous puissions vous répondre.",
   sendingOk:"Merci — votre demande est bien envoyée. Nous revenons vers vous très vite.",
-  sendingMail:"Votre messagerie s'ouvre avec votre demande prête à partir. Appuyez sur envoyer pour la transmettre.",
-  sendingErr:"L'envoi a échoué. Vous pouvez nous écrire directement à ",
-  copyBtn:"Votre messagerie ne s'est pas ouverte ? Copier ma demande",
-  copyDone:"Copié — collez-la dans un e-mail à jb@musichackspace.org"
+  sending:"Envoi en cours…",
+  sendingErr:"L'envoi a échoué. Vous pouvez nous écrire directement à "
 };
 let STR = FR_EXTRA;
 
@@ -912,10 +908,6 @@ function collect(){
   return data;
 }
 
-function asText(data){
-  return Object.entries(data).map(([k, v]) => k + " : " + v).join("\n");
-}
-
 function show(kind, text){
   msg.className = kind;
   msg.textContent = text;          /* efface aussi tout bouton de secours precedent */
@@ -931,33 +923,9 @@ form.addEventListener("submit", async (e) => {
   }
   const data = collect();
 
-  if (!FORM_ENDPOINT){
-    const subject = "Le Clos des Clefs — " + STR.mailSubject + " : " + data.evenement
-      + (data.date ? " — " + data.date : "");
-    const text = asText(data);
-    location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject)
-      + "&body=" + encodeURIComponent(text);
-    track("enquiry_submit", { method: "mailto", type: data.evenement });
-    /* Si la messagerie ne s'ouvre pas — cas courant sur mobile et en webmail —
-       le visiteur a quand meme un moyen de nous transmettre sa demande. */
-    show("ok", STR.sendingMail);
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "btn btn-p";
-    b.style.cssText = "margin-top:.8rem;font-size:.86rem;padding:.55rem 1rem";
-    b.textContent = STR.copyBtn;
-    b.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        b.textContent = STR.copyDone;
-      } catch (e) {
-        show("err", STR.sendingErr + CONTACT_EMAIL);
-      }
-    });
-    msg.appendChild(document.createElement("br"));
-    msg.appendChild(b);
-    return;
-  }
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  show("ok", STR.sending);
 
   try {
     const res = await fetch(FORM_ENDPOINT, {
@@ -967,10 +935,12 @@ form.addEventListener("submit", async (e) => {
     });
     if (!res.ok) throw new Error("HTTP " + res.status);
     form.reset();
-    track("enquiry_submit", { method: "endpoint", type: data.evenement });
+    track("enquiry_submit", { type: data.evenement });
     show("ok", STR.sendingOk);
   } catch (err) {
     show("err", STR.sendingErr + CONTACT_EMAIL);
+  } finally {
+    btn.disabled = false;
   }
 });
 
