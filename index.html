@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Le Clos des Clefs — Lieu de réception pour mariages et séminaires · La Couture-Boussey, Eure</title>
-<meta name="description" content="Le Clos des Clefs : une maison de maître, des granges et un parc de deux hectares pour votre mariage ou votre séminaire, dans une maison de facteurs de flûtes à La Couture-Boussey (Eure), à une heure de Paris. 500 m² de salles de réception et dix chambres sur place." />
+<title>Lieu de mariage près de Paris, Eure · Yvelines · Eure-et-Loir — Le Clos des Clefs</title>
+<meta name="description" content="Domaine familial pour mariages et séminaires dans l'Eure, aux portes des Yvelines et de l'Eure-et-Loir, à 1 h de Paris. 10 chambres. Ex-Ferme des Luthiers." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Le Clos des Clefs" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:locale:alternate" content="en_GB" />
 <meta property="og:url" content="https://leclosdesclefs.com/" />
-<meta property="og:title" content="Le Clos des Clefs — Mariages et séminaires à une heure de Paris" />
-<meta property="og:description" content="Une maison de maître, des granges couvertes de lierre et un parc de deux hectares, dans le village normand des facteurs d'instruments. La Couture-Boussey, Eure." />
+<meta property="og:title" content="Le Clos des Clefs — Lieu de mariage et séminaire à une heure de Paris" />
+<meta property="og:description" content="Une maison de maître, des granges couvertes de lierre et un parc de deux hectares, dans le village des facteurs d'instruments à vent. La Couture-Boussey, Eure — anciennement La Ferme des Luthiers." />
 <meta property="og:image" content="https://leclosdesclefs.com/images/maison-principale.jpg" />
 <meta property="og:image:width" content="1800" />
 <meta property="og:image:height" content="1011" />
 <meta property="og:image:alt" content="La maison de maître du Clos des Clefs et son parc, à La Couture-Boussey" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Le Clos des Clefs — Mariages et séminaires" />
-<meta name="twitter:description" content="Une maison de maître, des granges et un parc de deux hectares, à une heure de Paris." />
+<meta name="twitter:description" content="Domaine familial pour mariages et séminaires, entre Eure, Yvelines et Eure-et-Loir, à une heure de Paris. Anciennement La Ferme des Luthiers." />
 <meta name="twitter:image" content="https://leclosdesclefs.com/images/maison-principale.jpg" />
 <link rel="canonical" href="https://leclosdesclefs.com/" />
 <link rel="alternate" hreflang="fr" href="https://leclosdesclefs.com/" />
@@ -28,8 +28,8 @@
 <meta name="theme-color" content="#6f7d66" />
 <meta name="geo.region" content="FR-27" />
 <meta name="geo.placename" content="La Couture-Boussey" />
-<meta name="geo.position" content="48.8836;1.3419" />
-<meta name="ICBM" content="48.8836, 1.3419" />
+<meta name="geo.position" content="48.8978;1.4058" />
+<meta name="ICBM" content="48.8978, 1.4058" />
 <link rel="preload" as="image" href="images/maison-principale-1800.webp" imagesrcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" imagesizes="100vw" fetchpriority="high" />
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8471' stroke-width='2' stroke-linecap='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>" />
@@ -198,6 +198,15 @@
     body.has-sticky{padding-bottom:5rem}
   }
 
+  /* questions frequentes, repliees */
+  .fold{border:1px solid var(--line);border-radius:11px;background:#fff;padding:0 1.3rem;margin-top:.7rem}
+  .fold>summary{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.95rem;font-weight:600;
+    color:var(--ink);cursor:pointer;padding:1rem 0;list-style:none}
+  .fold>summary::-webkit-details-marker{display:none}
+  .fold>summary::before{content:"+";display:inline-block;width:1.2rem;color:var(--sage);font-weight:700}
+  .fold[open]>summary::before{content:"\2212"}
+  .fold p{color:var(--ink-soft);font-size:.96rem;margin:0 0 1.1rem 1.2rem}
+
   [hidden]{display:none !important}
 </style>
 
@@ -240,7 +249,7 @@
       "@id": "https://leclosdesclefs.com/#website",
       "url": "https://leclosdesclefs.com/",
       "name": "Le Clos des Clefs",
-      "alternateName": "La Ferme des Luthiers",
+      "alternateName": ["La Ferme des Luthiers", "Ferme des Luthiers"],
       "inLanguage": ["fr-FR", "en-GB"],
       "publisher": { "@id": "https://leclosdesclefs.com/#venue" }
     },
@@ -264,11 +273,11 @@
       "caption": "La maison de maître du Clos des Clefs, à La Couture-Boussey"
     },
     {
-      "@type": "EventVenue",
+      "@type": ["EventVenue", "LocalBusiness"],
       "@id": "https://leclosdesclefs.com/#venue",
       "name": "Le Clos des Clefs",
-      "alternateName": "La Ferme des Luthiers",
-      "description": "Lieu de réception pour mariages, fêtes de famille et séminaires : maison de maître, granges et parc de deux hectares, dont 500 m² de salles de réception, dans une maison de facteurs de flûtes à La Couture-Boussey (Eure), à une heure de Paris.",
+      "alternateName": ["La Ferme des Luthiers", "Ferme des Luthiers"],
+      "description": "Domaine familial pour mariages, fêtes de famille et séminaires : maison de maître, granges et parc de deux hectares, 500 m² de salles de réception et dix chambres, à La Couture-Boussey (Eure), aux portes des Yvelines et de l'Eure-et-Loir, à une heure de Paris. Le Clos des Clefs succède à La Ferme des Luthiers et appartient toujours à la famille Lot, facteurs de flûtes, depuis plus de 300 ans.",
       "url": "https://leclosdesclefs.com/",
       "email": "jb@musichackspace.org",
       "image": { "@id": "https://leclosdesclefs.com/#primaryimage" },
@@ -281,14 +290,77 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 48.8836,
-        "longitude": 1.3419
+        "latitude": 48.8978,
+        "longitude": 1.4058
       },
+      "areaServed": [
+        { "@type": "City", "name": "Paris" },
+        { "@type": "AdministrativeArea", "name": "Île-de-France" },
+        { "@type": "AdministrativeArea", "name": "Yvelines" },
+        { "@type": "AdministrativeArea", "name": "Eure-et-Loir" },
+        { "@type": "AdministrativeArea", "name": "Eure" },
+        { "@type": "AdministrativeArea", "name": "Normandie" }
+      ],
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Salles de réception — 500 m²", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Parc de deux hectares", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Stationnement sur place", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Dix chambres sur place", "value": 10 }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://leclosdesclefs.com/#faq",
+      "inLanguage": "fr-FR",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Où se trouve Le Clos des Clefs ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À La Couture-Boussey (27750), dans l'Eure, au cœur du triangle Évreux – Dreux – Mantes-la-Jolie : à 5 km d'Anet et de l'Eure-et-Loir, à une vingtaine de kilomètres de Houdan et des Yvelines, et à 80 km de Paris."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce un lieu de mariage pratique depuis Paris et la région parisienne ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : environ une heure de route par l'A13 puis la N13, ou moins d'une heure de train de Paris Saint-Lazare à Bueil, la gare étant à cinq minutes du domaine. Stationnement sur place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Clos des Clefs, est-ce l'ancienne Ferme des Luthiers ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le Clos des Clefs succède à La Ferme des Luthiers : c'est le même domaine, avec les mêmes salles de réception, et il appartient toujours à la même famille, la famille Lot, depuis plus de 300 ans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on dormir sur place ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, le domaine compte dix chambres, pour les mariés et leurs proches ou pour une équipe en séminaire. Pour les autres invités, nous vous indiquons des gîtes, chambres d'hôtes et hôtels des environs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Accueillez-vous aussi des séminaires et des fêtes de famille ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui : journées d'entreprise, séminaires de plusieurs jours, anniversaires et fêtes de famille, dans les 500 m² de salles de réception et le parc de deux hectares."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment visiter le domaine ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sur rendez-vous : écrivez-nous avec le formulaire ci-dessous et nous vous proposons un créneau de visite."
+          }
+        }
       ]
     }
   ]
@@ -322,7 +394,7 @@
 <section class="hero">
   <picture>
     <source type="image/webp" sizes="100vw" srcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" />
-    <img src="images/maison-principale.jpg" width="1800" height="1011" decoding="async" fetchpriority="high" alt="La maison de maître du Clos des Clefs, ses volets blancs et son jardin, à La Couture-Boussey" />
+    <img src="images/maison-principale.jpg" width="1800" height="1011" decoding="async" fetchpriority="high" alt="La maison de maître du Clos des Clefs, anciennement La Ferme des Luthiers, lieu de mariage à La Couture-Boussey dans l'Eure" />
   </picture>
   <div class="wrap">
     <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 1&nbsp;h&nbsp;de&nbsp;Paris</span>
@@ -341,7 +413,7 @@
   <div class="wrap">
     <span class="eyebrow" data-i18n="wedEyebrow">Mariages</span>
     <h2 data-i18n="wedTitle">Un mariage au Clos, du vin d'honneur au dernier morceau</h2>
-    <p class="lede" data-i18n="wedLede">Depuis les années 2000, le domaine accueille mariages et fêtes de famille. Le jour de votre mariage, la maison sert de toile de fond, le parc accueille la cérémonie et le vin d'honneur, et les granges le dîner et la fête.</p>
+    <p class="lede" data-i18n="wedLede">Un lieu de mariage dans l'Eure, aux portes des Yvelines et de l'Eure-et-Loir, à une heure de Paris. Depuis les années 2000, le domaine accueille mariages et fêtes de famille. Le jour de votre mariage, la maison sert de toile de fond, le parc accueille la cérémonie et le vin d'honneur, et les granges le dîner et la fête.</p>
 
     <div class="split" style="margin-top:2.8rem">
       <div class="grid g2" style="gap:1.2rem">
@@ -369,7 +441,7 @@
       <div class="figure">
         <picture>
           <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/parc-exterieur-900.webp 900w, images/parc-exterieur-1800.webp 1800w" />
-          <img src="images/parc-exterieur.jpg" width="1800" height="1234" decoding="async" loading="lazy" alt="Buffet dressé dans le parc, sous les arbres, face à la maison de maître" />
+          <img src="images/parc-exterieur.jpg" width="1800" height="1234" decoding="async" loading="lazy" alt="Vin d'honneur de mariage dans le parc du Clos des Clefs, face à la maison de maître" />
         </picture>
         <p class="cap" data-i18n="wedCap">Le parc, face à la maison — cérémonies et vins d'honneur à la belle saison.</p>
       </div>
@@ -524,7 +596,7 @@
       <span class="eyebrow" data-i18n="storyEyebrow">L'histoire</span>
       <h2 data-i18n="storyTitle">Pourquoi «&nbsp;le Clos des Clefs&nbsp;»</h2>
       <p data-i18n="storyP1">La Couture-Boussey fabrique des instruments à vent depuis le XVIIᵉ siècle. Hotteterre, Lot, Godfroy, Buffet : les dynasties de facteurs nées ici ont équipé les orchestres de Paris, de Londres et de New York. Le village a toujours son musée des instruments à vent.</p>
-      <p data-i18n="storyP2">Le domaine appartient depuis plus de 300 ans à la famille Lot, facteurs de flûtes traversières. Longtemps connu sous le nom de La Ferme des Luthiers, il a abrité le travail des flûtes, puis une ferme, puis des mariages et des séminaires.</p>
+      <p data-i18n="storyP2">Le domaine appartient depuis plus de 300 ans à la famille Lot, facteurs de flûtes traversières, et il est toujours resté dans la famille. Il a abrité le travail des flûtes, puis une ferme, puis, sous le nom de La Ferme des Luthiers, des mariages et des séminaires. Le Clos des Clefs en prend la suite.</p>
       <p data-i18n="storyP3">Les clefs, ce sont d'abord celles des flûtes et des clarinettes : les petites pièces de métal que les ateliers du village ajustaient à la main. C'est aussi la clef de sol des partitions.</p>
     </div>
     <div class="figure">
@@ -541,7 +613,8 @@
 <section id="acces">
   <div class="wrap">
     <span class="eyebrow" data-i18n="accEyebrow">Venir</span>
-    <h2 data-i18n="accTitle">À une heure de Paris</h2>
+    <h2 data-i18n="accTitle">Aux portes de l'Île-de-France</h2>
+    <p class="lede" data-i18n="accLede">La Couture-Boussey se trouve dans l'Eure, au cœur du triangle Évreux&nbsp;– Dreux&nbsp;– Mantes-la-Jolie : à 5 km d'Anet et de l'Eure-et-Loir, à une vingtaine de kilomètres de Houdan et des Yvelines, à 80 km de Paris. Pour un mariage en région parisienne, le Clos est à une heure de route ou de train.</p>
     <div class="grid g3" style="margin-top:2.2rem">
       <div class="card">
         <h3 data-i18n="acc1t">En train</h3>
@@ -555,6 +628,44 @@
         <h3 data-i18n="acc3t">Dormir sur place</h3>
         <p data-i18n="acc3p">Dix chambres au domaine pour vos proches ou votre équipe. Pour les autres invités, gîtes, chambres d'hôtes et hôtels des environs : nous vous indiquons les adresses.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS
+     Volontairement discret (questions repliees, pas de lien dans le menu) :
+     c'est ici que vivent l'ancien nom et les reperes geographiques que l'on
+     cherche sur Google, sans alourdir la page. Le texte doit rester identique
+     au FAQPage des donnees structurees. -->
+<section id="questions">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="faqEyebrow">Questions fréquentes</span>
+    <h2 data-i18n="faqTitle">Bon à savoir</h2>
+    <div style="max-width:46rem;margin-top:1.4rem">
+      <details class="fold">
+        <summary data-i18n="faq1q">Où se trouve Le Clos des Clefs ?</summary>
+        <p data-i18n="faq1a">À La Couture-Boussey (27750), dans l'Eure, au cœur du triangle Évreux&nbsp;– Dreux&nbsp;– Mantes-la-Jolie : à 5 km d'Anet et de l'Eure-et-Loir, à une vingtaine de kilomètres de Houdan et des Yvelines, et à 80 km de Paris.</p>
+      </details>
+      <details class="fold">
+        <summary data-i18n="faq2q">Est-ce un lieu de mariage pratique depuis Paris et la région parisienne ?</summary>
+        <p data-i18n="faq2a">Oui : environ une heure de route par l'A13 puis la N13, ou moins d'une heure de train de Paris Saint-Lazare à Bueil, la gare étant à cinq minutes du domaine. Stationnement sur place.</p>
+      </details>
+      <details class="fold">
+        <summary data-i18n="faq3q">Le Clos des Clefs, est-ce l'ancienne Ferme des Luthiers ?</summary>
+        <p data-i18n="faq3a">Oui. Le Clos des Clefs succède à La Ferme des Luthiers : c'est le même domaine, avec les mêmes salles de réception, et il appartient toujours à la même famille, la famille Lot, depuis plus de 300 ans.</p>
+      </details>
+      <details class="fold">
+        <summary data-i18n="faq4q">Peut-on dormir sur place ?</summary>
+        <p data-i18n="faq4a">Oui, le domaine compte dix chambres, pour les mariés et leurs proches ou pour une équipe en séminaire. Pour les autres invités, nous vous indiquons des gîtes, chambres d'hôtes et hôtels des environs.</p>
+      </details>
+      <details class="fold">
+        <summary data-i18n="faq5q">Accueillez-vous aussi des séminaires et des fêtes de famille ?</summary>
+        <p data-i18n="faq5a">Oui : journées d'entreprise, séminaires de plusieurs jours, anniversaires et fêtes de famille, dans les 500 m² de salles de réception et le parc de deux hectares.</p>
+      </details>
+      <details class="fold">
+        <summary data-i18n="faq6q">Comment visiter le domaine ?</summary>
+        <p data-i18n="faq6a">Sur rendez-vous : écrivez-nous avec le formulaire ci-dessous et nous vous proposons un créneau de visite.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -650,7 +761,7 @@
       <div style="margin-top:.4rem"><a href="mailto:jb@musichackspace.org">jb@musichackspace.org</a></div>
     </div>
     <div style="max-width:26rem">
-      <p style="margin:0" data-i18n="footNote">Le domaine est une propriété privée : les visites se font sur rendez-vous.</p>
+      <p style="margin:0" data-i18n="footNote">Anciennement La Ferme des Luthiers. Propriété de la même famille depuis plus de 300 ans ; visites sur rendez-vous.</p>
     </div>
   </div>
 </footer>
@@ -695,7 +806,7 @@ const EN = {
 
   wedEyebrow:"Weddings",
   wedTitle:"A wedding at the Clos, from the drinks reception to the last song",
-  wedLede:"Since the 2000s the estate has hosted weddings and family celebrations. On your wedding day the house is the backdrop, the park holds the ceremony and the drinks reception, and the barns the dinner and the party.",
+  wedLede:"A wedding venue in the Eure, on the doorstep of the Yvelines and the Eure-et-Loir, an hour from Paris. Since the 2000s the estate has hosted weddings and family celebrations. On your wedding day the house is the backdrop, the park holds the ceremony and the drinks reception, and the barns the dinner and the party.",
   wed1t:"The ceremony",
   wed1p:"A secular ceremony under the tall trees of the park, facing the house. The village church is right next to the estate.",
   wed2t:"The drinks reception",
@@ -741,12 +852,13 @@ const EN = {
   storyEyebrow:"The story",
   storyTitle:"Why “le Clos des Clefs”",
   storyP1:"La Couture-Boussey has made wind instruments since the 17th century. Hotteterre, Lot, Godfroy, Buffet: the instrument-making dynasties born here supplied the orchestras of Paris, London and New York. The village still has its museum of wind instruments.",
-  storyP2:"The estate has belonged to the Lot family, makers of transverse flutes, for more than 300 years. Long known as La Ferme des Luthiers, it has housed flute making, then a farm, then weddings and seminars.",
+  storyP2:"The estate has belonged to the Lot family, makers of transverse flutes, for more than 300 years, and has always stayed in the family. It has housed flute making, then a farm, then, as La Ferme des Luthiers, weddings and seminars. Le Clos des Clefs carries that on.",
   storyP3:"The <em>clefs</em> are first the keys of flutes and clarinets: the small metal parts the village workshops fitted by hand. They are also the clef at the start of every score.",
   storyCap:"La Couture-Boussey, Eure — the estate on the edge of the historic village.",
 
   accEyebrow:"Getting here",
-  accTitle:"An hour from Paris",
+  accTitle:"On the doorstep of the Île-de-France",
+  accLede:"La Couture-Boussey lies in the Eure, at the heart of the Évreux&nbsp;– Dreux&nbsp;– Mantes-la-Jolie triangle: 5 km from Anet and the Eure-et-Loir, about twenty kilometres from Houdan and the Yvelines, 80 km from Paris. For a wedding near Paris, the Clos is an hour away by road or by train.",
   acc1t:"By train",
   acc1p:"Paris Saint-Lazare to Bueil, under an hour on the Normandy line, with frequent services. The station is five minutes by road from the estate.",
   acc2t:"By car",
@@ -764,6 +876,21 @@ const EN = {
   rooms3t:"For other guests",
   rooms3p:"Beyond ten bedrooms, gîtes, B&Bs and hotels nearby take over: we will point you to them.",
   roomsCta:"Check availability",
+
+  faqEyebrow:"Frequently asked questions",
+  faqTitle:"Good to know",
+  faq1q:"Where is Le Clos des Clefs?",
+  faq1a:"In La Couture-Boussey (27750), in the Eure, at the heart of the Évreux&nbsp;– Dreux&nbsp;– Mantes-la-Jolie triangle: 5 km from Anet and the Eure-et-Loir, about twenty kilometres from Houdan and the Yvelines, and 80 km from Paris.",
+  faq2q:"Is it a convenient wedding venue from Paris and the Île-de-France?",
+  faq2a:"Yes: about an hour by road via the A13 then the N13, or under an hour by train from Paris Saint-Lazare to Bueil, the station being five minutes from the estate. Parking on site.",
+  faq3q:"Is Le Clos des Clefs the former Ferme des Luthiers?",
+  faq3a:"Yes. Le Clos des Clefs succeeds La Ferme des Luthiers: it is the same estate, with the same reception rooms, and it still belongs to the same family, the Lot family, as it has for more than 300 years.",
+  faq4q:"Can guests stay on site?",
+  faq4a:"Yes, the estate has ten bedrooms, for the couple and their closest family and friends or for a team on a seminar. For other guests, we point you to gîtes, B&Bs and hotels nearby.",
+  faq5q:"Do you also host seminars and family celebrations?",
+  faq5a:"Yes: company days, seminars over several days, birthdays and family celebrations, in the 500 m² of reception rooms and the two-hectare park.",
+  faq6q:"How can we visit the estate?",
+  faq6a:"By appointment: write to us using the form below and we will suggest a time to visit.",
 
   ctEyebrow:"Contact us",
   ctTitle:"Tell us about your plans",
@@ -785,14 +912,14 @@ const EN = {
 
   footWhat:"Reception venue · weddings and seminars",
   footAddr:"La Couture-Boussey (27750), Eure, Normandy",
-  footNote:"The estate is private property: visits are by appointment.",
+  footNote:"Formerly La Ferme des Luthiers. Owned by the same family for more than 300 years; visits by appointment.",
   stickyCta:"Check a date",
 
   consentText:"We use Google Analytics to measure this site’s audience. Nothing is measured without your agreement.",
   consentNo:"Decline", consentYes:"Accept",
 
-  metaTitle:"Le Clos des Clefs — Wedding and seminar venue · La Couture-Boussey, Normandy",
-  metaDesc:"Le Clos des Clefs: a manor house, barns and two hectares of parkland for your wedding or seminar, in a flute makers' estate at La Couture-Boussey, Normandy, an hour from Paris. 500 m² of reception rooms and ten bedrooms on site.",
+  metaTitle:"Wedding venue near Paris, Eure · Yvelines · Eure-et-Loir — Le Clos des Clefs",
+  metaDesc:"Family-owned wedding and seminar venue in the Eure, near the Yvelines and Eure-et-Loir, 1 h from Paris. 10 bedrooms. Formerly La Ferme des Luthiers.",
   placeholderDate:"e.g. 12 June 2027, or summer 2027",
   placeholderEmail:"you@example.com",
   needed:"Please give your name and a valid email address so we can reply.",

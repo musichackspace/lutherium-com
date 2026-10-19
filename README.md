@@ -75,7 +75,27 @@ event type in the form; *Demander les disponibilités* (`data-rooms`) pre-select
 
 ## Section order
 
-hero · `#mariages` · `#seminaires` · `#chambres` · `#lieu` · `#histoire` · `#acces` · `#contact`
+hero · `#mariages` · `#seminaires` · `#chambres` · `#lieu` · `#histoire` · `#acces` · `#questions` · `#contact`
+
+## SEO
+
+Target: wedding (then seminar) searches around Paris — **région parisienne, Yvelines,
+Eure-et-Loir, Eure** — and the old name **La Ferme des Luthiers**.
+
+- Title and description put « lieu de mariage près de Paris » and the three départements
+  first. The geography lives in real content: the weddings lede, the `#acces` lede (the
+  Évreux – Dreux – Mantes-la-Jolie triangle, Anet, Houdan) and the FAQ.
+- The old name appears discreetly: the history paragraph, FAQ question 3, the footer,
+  the hero image alt text, and `alternateName` in the structured data. The message is
+  always the same: Le Clos des Clefs succeeds La Ferme des Luthiers and is still owned
+  by the same family.
+- `#questions` is collapsed and not in the menu. Its text must stay identical to the
+  `FAQPage` node in the JSON-LD.
+- Geo coordinates are the centre of La Couture-Boussey (48.8978, 1.4058). Replace them
+  with the estate's exact position, and add the street address, once confirmed.
+- No separate « mariage Yvelines » / « mariage Eure-et-Loir » pages: Google treats
+  near-identical location pages as doorway pages. If more pages are wanted, they need
+  genuinely different content (e.g. a page per format, or a guide to the area).
 
 ## What the copy deliberately does not say
 
