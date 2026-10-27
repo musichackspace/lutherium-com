@@ -4,31 +4,39 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://leclosdesclefs.com/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://leclosdesclefs.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://leclosdesclefs.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://leclosdesclefs.com/"/>
     <image:image>
-      <image:loc>https://leclosdesclefs.com/images/maison-principale.jpg</image:loc>
-      <image:title>La maison de maître du Clos des Clefs, La Couture-Boussey</image:title>
+      <image:loc>https://leclosdesclefs.com/images/maison-parc.jpg</image:loc>
+      <image:title>La maison de maître du Clos des Clefs vue depuis le parc, La Couture-Boussey</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://leclosdesclefs.com/images/parc-exterieur.jpg</image:loc>
-      <image:title>Vin d'honneur dans le parc du Clos des Clefs</image:title>
+      <image:loc>https://leclosdesclefs.com/images/ceremonie-arche.jpg</image:loc>
+      <image:title>Cérémonie de mariage dans le jardin du Clos des Clefs</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://leclosdesclefs.com/images/salle-reception.jpg</image:loc>
+      <image:loc>https://leclosdesclefs.com/images/grande-salle-diner.jpg</image:loc>
       <image:title>La grande salle dressée pour un dîner de mariage</image:title>
     </image:image>
     <image:image>
       <image:loc>https://leclosdesclefs.com/images/salle-seminaire.jpg</image:loc>
-      <image:title>Salle de réception aménagée pour un séminaire</image:title>
+      <image:title>Une des deux salles, aménagée pour une réunion</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://leclosdesclefs.com/images/grange-lierre.jpg</image:loc>
-      <image:title>Les granges couvertes de lierre et la cour</image:title>
+      <image:loc>https://leclosdesclefs.com/images/table-dressee.jpg</image:loc>
+      <image:title>Table ronde dressée pour un dîner</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/grange-cour.jpg</image:loc>
+      <image:title>La grange et la cour gravillonnée</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://leclosdesclefs.com/images/parc-saule.jpg</image:loc>
+      <image:title>Le parc du Clos des Clefs, saule pleureur et grands arbres</image:title>
     </image:image>
     <image:image>
       <image:loc>https://leclosdesclefs.com/images/vue-aerienne-village.jpg</image:loc>

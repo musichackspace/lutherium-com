@@ -12,14 +12,14 @@
 <meta property="og:url" content="https://leclosdesclefs.com/" />
 <meta property="og:title" content="Le Clos des Clefs — Lieu de mariage et séminaire à une heure de Paris" />
 <meta property="og:description" content="Une maison de maître, des granges couvertes de lierre et un parc de deux hectares, dans le village des facteurs d'instruments à vent. La Couture-Boussey, Eure — anciennement La Ferme des Luthiers." />
-<meta property="og:image" content="https://leclosdesclefs.com/images/maison-principale.jpg" />
+<meta property="og:image" content="https://leclosdesclefs.com/images/maison-parc.jpg" />
 <meta property="og:image:width" content="1800" />
-<meta property="og:image:height" content="1011" />
+<meta property="og:image:height" content="1201" />
 <meta property="og:image:alt" content="La maison de maître du Clos des Clefs et son parc, à La Couture-Boussey" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Le Clos des Clefs — Mariages et séminaires" />
 <meta name="twitter:description" content="Domaine familial pour mariages et séminaires, entre Eure, Yvelines et Eure-et-Loir, à une heure de Paris. Anciennement La Ferme des Luthiers." />
-<meta name="twitter:image" content="https://leclosdesclefs.com/images/maison-principale.jpg" />
+<meta name="twitter:image" content="https://leclosdesclefs.com/images/maison-parc.jpg" />
 <link rel="canonical" href="https://leclosdesclefs.com/" />
 <link rel="alternate" hreflang="fr" href="https://leclosdesclefs.com/" />
 <link rel="alternate" hreflang="en" href="https://leclosdesclefs.com/?lang=en" />
@@ -30,7 +30,7 @@
 <meta name="geo.placename" content="La Couture-Boussey" />
 <meta name="geo.position" content="48.8978;1.4058" />
 <meta name="ICBM" content="48.8978, 1.4058" />
-<link rel="preload" as="image" href="images/maison-principale-1800.webp" imagesrcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" imagesizes="100vw" fetchpriority="high" />
+<link rel="preload" as="image" href="images/maison-parc-1800.webp" imagesrcset="images/maison-parc-900.webp 900w, images/maison-parc-1800.webp 1800w" imagesizes="100vw" fetchpriority="high" />
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8471' stroke-width='2' stroke-linecap='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg>" />
 <style>
@@ -94,6 +94,11 @@
     background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
     padding:.36rem .85rem;border-radius:99px;margin-bottom:1.3rem;backdrop-filter:blur(4px)}
 
+  .hero .opening{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.86rem;font-weight:600;
+    color:rgba(255,255,255,.92);margin:1.1rem 0 0}
+  .fine{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.78rem;color:var(--ink-soft);
+    margin-top:.9rem;max-width:46rem}
+
   /* buttons */
   .btn{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.93rem;
     font-weight:600;padding:.82rem 1.6rem;border-radius:7px;text-decoration:none;border:1px solid transparent;cursor:pointer}
@@ -114,6 +119,11 @@
   @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
   .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
   @media(max-width:840px){.split{grid-template-columns:1fr}}
+  /* la photo prend toute la hauteur de la colonne de cartes voisine */
+  .split.stretch{align-items:stretch}
+  .split.stretch .figure{display:flex;flex-direction:column}
+  .split.stretch .figure img{flex:1 1 0;min-height:22rem;object-fit:cover}
+  @media(max-width:840px){.split.stretch .figure img{flex:none;min-height:0;aspect-ratio:4/3}}
   /* <picture> ne sert qu'a proposer le WebP : il disparait de la mise en page
      pour que les selecteurs existants (.hero img, .figure img, .space img) tiennent. */
   picture{display:contents}
@@ -266,10 +276,10 @@
     {
       "@type": "ImageObject",
       "@id": "https://leclosdesclefs.com/#primaryimage",
-      "url": "https://leclosdesclefs.com/images/maison-principale.jpg",
-      "contentUrl": "https://leclosdesclefs.com/images/maison-principale.jpg",
+      "url": "https://leclosdesclefs.com/images/maison-parc.jpg",
+      "contentUrl": "https://leclosdesclefs.com/images/maison-parc.jpg",
       "width": 1800,
-      "height": 1011,
+      "height": 1201,
       "caption": "La maison de maître du Clos des Clefs, à La Couture-Boussey"
     },
     {
@@ -302,7 +312,7 @@
         { "@type": "AdministrativeArea", "name": "Normandie" }
       ],
       "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Salles de réception — 500 m²", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Deux salles de réception — 500 m² au total", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Parc de deux hectares", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Stationnement sur place", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Dix chambres sur place", "value": 10 }
@@ -393,8 +403,8 @@
 <!-- HERO -->
 <section class="hero">
   <picture>
-    <source type="image/webp" sizes="100vw" srcset="images/maison-principale-900.webp 900w, images/maison-principale-1800.webp 1800w" />
-    <img src="images/maison-principale.jpg" width="1800" height="1011" decoding="async" fetchpriority="high" alt="La maison de maître du Clos des Clefs, anciennement La Ferme des Luthiers, lieu de mariage à La Couture-Boussey dans l'Eure" />
+    <source type="image/webp" sizes="100vw" srcset="images/maison-parc-900.webp 900w, images/maison-parc-1800.webp 1800w" />
+    <img src="images/maison-parc.jpg" width="1800" height="1201" decoding="async" fetchpriority="high" alt="La maison de maître du Clos des Clefs vue depuis le parc, anciennement La Ferme des Luthiers, lieu de mariage à La Couture-Boussey dans l'Eure" />
   </picture>
   <div class="wrap">
     <span class="tag" data-i18n="heroTag">La Couture-Boussey · Normandie · 1&nbsp;h&nbsp;de&nbsp;Paris</span>
@@ -405,6 +415,7 @@
       <a class="btn btn-p" href="#contact" data-type="Mariage" data-i18n="heroCta1">Demander une date</a>
       <a class="btn btn-g" href="#mariages" data-i18n="heroCta2">Se marier au Clos</a>
     </div>
+    <p class="opening" data-i18n="heroOpen">Le domaine est en rénovation et ouvre en mars 2027.</p>
   </div>
 </section>
 
@@ -415,7 +426,7 @@
     <h2 data-i18n="wedTitle">Un mariage au Clos, du vin d'honneur au dernier morceau</h2>
     <p class="lede" data-i18n="wedLede">Un lieu de mariage dans l'Eure, aux portes des Yvelines et de l'Eure-et-Loir, à une heure de Paris. Depuis les années 2000, le domaine accueille mariages et fêtes de famille. Le jour de votre mariage, la maison sert de toile de fond, le parc accueille la cérémonie et le vin d'honneur, et les granges le dîner et la fête.</p>
 
-    <div class="split" style="margin-top:2.8rem">
+    <div class="split stretch" style="margin-top:2.8rem">
       <div class="grid g2" style="gap:1.2rem">
         <div class="card">
           <span class="num">01</span>
@@ -440,10 +451,10 @@
       </div>
       <div class="figure">
         <picture>
-          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/parc-exterieur-900.webp 900w, images/parc-exterieur-1800.webp 1800w" />
-          <img src="images/parc-exterieur.jpg" width="1800" height="1234" decoding="async" loading="lazy" alt="Vin d'honneur de mariage dans le parc du Clos des Clefs, face à la maison de maître" />
+          <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/ceremonie-arche-900.webp 900w, images/ceremonie-arche-1800.webp 1800w" />
+          <img src="images/ceremonie-arche.jpg" width="1800" height="1201" decoding="async" loading="lazy" alt="Arche drapée de blanc ouvrant sur les rangs de chaises d'une cérémonie de mariage, dans le jardin clos de murs du Clos des Clefs" />
         </picture>
-        <p class="cap" data-i18n="wedCap">Le parc, face à la maison — cérémonies et vins d'honneur à la belle saison.</p>
+        <p class="cap" data-i18n="wedCap">Une cérémonie dans le jardin, à l'abri des vieux murs de pierre.</p>
       </div>
     </div>
 
@@ -465,15 +476,15 @@
       <div class="figure">
         <picture>
           <source type="image/webp" sizes="(max-width:840px) 92vw, 46vw" srcset="images/salle-seminaire-900.webp 900w, images/salle-seminaire-1800.webp 1800w" />
-          <img src="images/salle-seminaire.jpg" width="1800" height="1268" decoding="async" loading="lazy" alt="Salle de réception sous charpente apparente, aménagée pour un séminaire" />
+          <img src="images/salle-seminaire.jpg" width="1800" height="1268" decoding="async" loading="lazy" alt="Une des deux salles de séminaire, tables en U face à un écran de projection" />
         </picture>
-        <p class="cap" data-i18n="semCap">Les salles de réception, aménagées pour une journée de travail.</p>
+        <p class="cap" data-i18n="semCap">L'une des deux salles, aménagée pour une réunion.</p>
       </div>
       <div class="grid g2" style="gap:1.2rem">
         <div class="card">
           <span class="num">01</span>
           <h3 data-i18n="sem1t">Des salles qui s'adaptent</h3>
-          <p data-i18n="sem1p">500 m² sous charpente apparente : plénière, ateliers en sous-groupes ou grande tablée pour le déjeuner.</p>
+          <p data-i18n="sem1p">Deux salles, 500 m² au total : plénière, ateliers en sous-groupes ou grande tablée pour le déjeuner.</p>
         </div>
         <div class="card">
           <span class="num">02</span>
@@ -501,15 +512,39 @@
 
 <!-- CHAMBRES
      Dix chambres : le seul chiffre arrete. Pas de tarif ni de detail par
-     chambre tant qu'ils ne sont pas fixes, et pas de photo tant qu'il n'y en
-     a pas de vraie. -->
+     chambre tant qu'ils ne sont pas fixes. Les chambres sont en renovation :
+     les visuels sont des images de synthese, signalees comme telles. -->
 <section id="chambres">
   <div class="wrap">
     <span class="eyebrow" data-i18n="roomsEyebrow">Dormir sur place</span>
     <h2 data-i18n="roomsTitle">Dix chambres au domaine</h2>
     <p class="lede" data-i18n="roomsLede">Le Clos compte dix chambres. On ne reprend pas la route après la fête, et un séminaire peut durer plusieurs jours sans quitter le lieu.</p>
 
-    <div class="grid g3" style="margin-top:2.4rem">
+    <div class="grid g2" style="margin-top:2.4rem">
+      <article class="space">
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/chambre-maison-rendu-900.webp 900w, images/chambre-maison-rendu-1440.webp 1435w" />
+          <img src="images/chambre-maison-rendu.jpg" width="1435" height="1096" decoding="async" loading="lazy" alt="Image de synthèse d'une chambre de la maison : papier peint fleuri, lit double, armoire ancienne et porte-fenêtre sur le jardin" />
+        </picture>
+        <div class="body">
+          <h3 data-i18n="roomR1t">Une chambre de la maison</h3>
+          <p data-i18n="roomR1p">Au rez-de-chaussée, de plain-pied sur le jardin.</p>
+        </div>
+      </article>
+      <article class="space">
+        <picture>
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/chambre-bergerie-rendu-900.webp 900w, images/chambre-bergerie-rendu-1440.webp 1448w" />
+          <img src="images/chambre-bergerie-rendu.jpg" width="1448" height="1086" decoding="async" loading="lazy" alt="Image de synthèse d'une chambre de la bergerie : lambris bleu-vert, poutre apparente et fenêtre de toit" />
+        </picture>
+        <div class="body">
+          <h3 data-i18n="roomR2t">Une chambre de la bergerie</h3>
+          <p data-i18n="roomR2p">Sous les combles, entre lambris et poutres apparentes.</p>
+        </div>
+      </article>
+    </div>
+    <p class="fine" data-i18n="roomsFine">Les chambres sont en cours de rénovation. Ces visuels sont des images de synthèse : ils montrent l'esprit du projet, et les chambres terminées pourront en différer. Ouverture en mars 2027.</p>
+
+    <div class="grid g3" style="margin-top:2.2rem">
       <div class="card">
         <h3 data-i18n="rooms1t">Pour un mariage</h3>
         <p data-i18n="rooms1p">Les mariés et leurs proches dorment au Clos : on se prépare sur place le matin, et l'on se retrouve le lendemain sans prendre la voiture.</p>
@@ -540,8 +575,8 @@
     <div class="grid g2" style="margin-top:2.6rem">
       <article class="space">
         <picture>
-          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/salle-reception-900.webp 900w, images/salle-reception-1800.webp 1800w" />
-          <img src="images/salle-reception.jpg" width="1800" height="1200" decoding="async" loading="lazy" alt="La grande salle dressée pour un dîner, tables rondes et nappes blanches" />
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/grande-salle-diner-900.webp 900w, images/grande-salle-diner-1800.webp 1800w" />
+          <img src="images/grande-salle-diner.jpg" width="1800" height="1201" decoding="async" loading="lazy" alt="La grande salle dressée pour un dîner de mariage, tables rondes et nappes blanches sous les poutres" />
         </picture>
         <div class="body">
           <h3 data-i18n="sp1t">La grande salle</h3>
@@ -550,18 +585,18 @@
       </article>
       <article class="space">
         <picture>
-          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/salle-seminaire-900.webp 900w, images/salle-seminaire-1800.webp 1800w" />
-          <img src="images/salle-seminaire.jpg" width="1800" height="1268" decoding="async" loading="lazy" alt="Salle de réception sous charpente apparente" />
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/table-dressee-900.webp 900w, images/table-dressee-1800.webp 1800w" />
+          <img src="images/table-dressee.jpg" width="1800" height="1201" decoding="async" loading="lazy" alt="Table ronde dressée pour un dîner, nappe blanche et chaises transparentes" />
         </picture>
         <div class="body">
-          <h3 data-i18n="sp2t">Les salles de réception — 500 m²</h3>
+          <h3 data-i18n="sp2t">Deux salles — 500 m² au total</h3>
           <p data-i18n="sp2p">Des volumes qui se transforment : séminaire le matin, grande tablée le soir.</p>
         </div>
       </article>
       <article class="space">
         <picture>
-          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/grange-lierre-900.webp 900w, images/grange-lierre-1800.webp 1800w" />
-          <img src="images/grange-lierre.jpg" width="1800" height="1165" decoding="async" loading="lazy" alt="Longue grange couverte de lierre, bordant une cour gravillonnée" />
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/grange-cour-900.webp 900w, images/grange-cour-1800.webp 1800w" />
+          <img src="images/grange-cour.jpg" width="1800" height="1201" decoding="async" loading="lazy" alt="Grange en pierre et brique au toit de tuiles, ouverte sur une cour gravillonnée" />
         </picture>
         <div class="body">
           <h3 data-i18n="sp3t">Les granges et la cour</h3>
@@ -570,8 +605,8 @@
       </article>
       <article class="space">
         <picture>
-          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/parc-exterieur-900.webp 900w, images/parc-exterieur-1800.webp 1800w" />
-          <img src="images/parc-exterieur.jpg" width="1800" height="1234" decoding="async" loading="lazy" alt="Le parc du domaine, pelouse et grands arbres devant la maison" />
+          <source type="image/webp" sizes="(max-width:640px) 92vw, 46vw" srcset="images/parc-saule-900.webp 900w, images/parc-saule-1800.webp 1800w" />
+          <img src="images/parc-saule.jpg" width="1800" height="1201" decoding="async" loading="lazy" alt="Le parc du domaine : saule pleureur, pelouses et grands arbres" />
         </picture>
         <div class="body">
           <h3 data-i18n="sp4t">Le parc</h3>
@@ -762,6 +797,7 @@
     </div>
     <div style="max-width:26rem">
       <p style="margin:0" data-i18n="footNote">Anciennement La Ferme des Luthiers. Propriété de la même famille depuis plus de 300 ans ; visites sur rendez-vous.</p>
+      <p style="margin:.6rem 0 0" data-i18n="footReno">Le domaine est en rénovation et ouvre en mars 2027. Les visuels des chambres sont des images de synthèse.</p>
     </div>
   </div>
 </footer>
@@ -798,6 +834,7 @@ const EN = {
   navStory:"The story", navAccess:"Getting here", navContact:"Contact us",
 
   heroTag:"La Couture-Boussey · Normandy · 1&nbsp;h&nbsp;from&nbsp;Paris",
+  heroOpen:"The estate is being renovated and opens in March 2027.",
   heroTitle:"Weddings and seminars",
   heroSub:"In a historic home of wind-instrument makers",
   heroLede:"A manor house, ivy-covered barns, two hectares of parkland and ten bedrooms, on the edge of a Normandy village that has made flutes, oboes and clarinets since the 17th century.",
@@ -815,16 +852,16 @@ const EN = {
   wed3p:"500 m² of reception rooms under the beams: long banquet tables or round tables, however you picture the evening.",
   wed4t:"The party",
   wed4p:"You dance in a village that has made instruments since the 17th century. Musicians, DJ or band: music is at home here.",
-  wedCap:"The park, facing the house — ceremonies and drinks receptions in the warmer months.",
+  wedCap:"A ceremony in the garden, sheltered by old stone walls.",
   wedNote:"Caterer, music, flowers, rooms for your family and friends: tell us how you picture the day and we will help you put it together.",
   wedCta:"Check a date for your wedding",
 
   semEyebrow:"Seminars",
   semTitle:"A seminar in the countryside, an hour from Paris",
   semLede:"A working day, a board meeting or a seminar over several days: large, light-filled rooms, ten bedrooms on site, a park to breathe in between sessions, and a story to tell your team.",
-  semCap:"The reception rooms, set up for a working day.",
+  semCap:"One of the two rooms, set up for a meeting.",
   sem1t:"Rooms that adapt",
-  sem1p:"500 m² under an exposed timber frame: plenary, breakout workshops, or one long table for lunch.",
+  sem1p:"Two rooms, 500 m² in all: plenary, breakout workshops, or one long table for lunch.",
   sem2t:"No car needed",
   sem2p:"Paris Saint-Lazare to Bueil in under an hour, then five minutes by road. Parking on site for those who drive.",
   sem3t:"A music workshop",
@@ -838,7 +875,7 @@ const EN = {
   placeLede:"Two hectares on the edge of La Couture-Boussey: a manor house with white shutters, long barns around a courtyard, and a park planted with tall trees.",
   sp1t:"The great hall",
   sp1p:"The heart of every reception: dinners, dances, concerts. Exposed beams, a mezzanine gallery, natural light.",
-  sp2t:"The reception rooms — 500 m²",
+  sp2t:"Two rooms — 500 m² in all",
   sp2p:"Spaces that change with the day: a seminar in the morning, one long table in the evening.",
   sp3t:"The barns and courtyard",
   sp3p:"Long ivy-covered barns around a gravel courtyard — once the workshops of the flute makers.",
@@ -876,6 +913,11 @@ const EN = {
   rooms3t:"For other guests",
   rooms3p:"Beyond ten bedrooms, gîtes, B&Bs and hotels nearby take over: we will point you to them.",
   roomsCta:"Check availability",
+  roomR1t:"A bedroom in the house",
+  roomR1p:"On the ground floor, opening straight onto the garden.",
+  roomR2t:"A bedroom in the sheepfold",
+  roomR2p:"Up under the roof, with wood panelling and exposed beams.",
+  roomsFine:"The bedrooms are being renovated. These images are computer-generated renders: they show the spirit of the project, and the finished rooms may differ. Opening in March 2027.",
 
   faqEyebrow:"Frequently asked questions",
   faqTitle:"Good to know",
@@ -913,6 +955,7 @@ const EN = {
   footWhat:"Reception venue · weddings and seminars",
   footAddr:"La Couture-Boussey (27750), Eure, Normandy",
   footNote:"Formerly La Ferme des Luthiers. Owned by the same family for more than 300 years; visits by appointment.",
+  footReno:"The estate is being renovated and opens in March 2027. The bedroom images are computer-generated renders.",
   stickyCta:"Check a date",
 
   consentText:"We use Google Analytics to measure this site’s audience. Nothing is measured without your agreement.",
